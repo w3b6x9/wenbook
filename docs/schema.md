@@ -12,6 +12,7 @@ last_name       | string    | not null
 date_of_birth   | date      | not null
 gender          | string    | not null
 profile_picture | string    | paperclip gem, default: default_url
+cover_picture   | string    | paperclip gem
 phone           | string    |
 education       | string    |
 relationship    | string    |
