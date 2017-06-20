@@ -4,7 +4,7 @@ import SignInForm from './sign_in_form';
 
 const mapStateToProps = ({ session }) => {
   return {
-    errors: session.errors,
+    errors: session.errorsSignIn,
   };
 };
 

@@ -21,7 +21,7 @@ export default class SignInForm extends React.Component {
     this.props.signIn(this.state);
   }
 
-  renderErrors() {
+  signInErrors() {
     return(
       <ul>
         {this.props.errors.map((error, idx) => {
@@ -36,7 +36,7 @@ export default class SignInForm extends React.Component {
   render() {
     return (
       <div>
-        {this.renderErrors()}
+        {this.signInErrors()}
         <form onSubmit={this.handleSubmit}>
           <label>
             Email

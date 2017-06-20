@@ -1,7 +1,8 @@
 import * as APIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_SIGN_UP_ERRORS = 'RECEIVE_SIGN_UP_ERRORS';
+export const RECEIVE_SIGN_IN_ERRORS = 'RECEIVE_SIGN_IN_ERRORS';
 
 export const receiveCurrentUser = currentUser => {
   return ({
@@ -10,19 +11,26 @@ export const receiveCurrentUser = currentUser => {
   });
 };
 
-export const receiveErrors = errors => {
+export const receiveSignUpErrors = errors => {
   return ({
-    type: RECEIVE_ERRORS,
-    errors,
+    type: RECEIVE_SIGN_UP_ERRORS,
+    errorsSignUp: errors,
   });
 };
+
+export const receiveSignInErrors = errors => {
+  return ({
+    type: RECEIVE_SIGN_IN_ERRORS,
+    errorsSignIn: errors,
+  })
+}
 
 export const signUp = user => {
   return dispatch => {
     return APIUtil.signUp(user)
       .then(
         user => dispatch(receiveCurrentUser(user)),
-        err => dispatch(receiveErrors(err.responseJSON))
+        err => dispatch(receiveSignUpErrors(err.responseJSON))
       );
   };
 };
@@ -32,7 +40,7 @@ export const signIn = user => {
     return APIUtil.signIn(user)
       .then(
         user => dispatch(receiveCurrentUser(user)),
-        err => dispatch(receiveErrors(err.responseJSON))
+        err => dispatch(receiveSignInErrors(err.responseJSON))
       );
   };
 };

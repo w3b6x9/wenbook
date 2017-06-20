@@ -23,7 +23,7 @@ export default class SignUpForm extends React.Component {
     this.props.signUp(this.state);
   }
 
-  renderErrors() {
+  signUpErrors() {
     return(
       <ul>
         {this.props.errors.map((error, idx) => {
@@ -38,7 +38,7 @@ export default class SignUpForm extends React.Component {
   render() {
     return (
       <div>
-        {this.renderErrors()}
+        {this.signUpErrors()}
         <form onSubmit={this.handleSubmit}>
           <label>
             First name
