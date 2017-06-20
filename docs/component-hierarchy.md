@@ -1,40 +1,54 @@
 ## Component Hierarchy
 
 **App**
-  - Navbar
+  - NavigationBarContainer
     - Link (Logo)
     - SearchBar
     - Link (Profile)
     - Link (Home)
-    - FriendsDropdown
-    - MessagesDropdown
-    - NotificationsDropdown
+    - FriendsDropdownContainer
+      - FriendsDropdown
+    - MessagesDropdownContainer
+      - MessagesDropdown
+    - NotificationsDropdownContainer
+      - NotificationsDropdown
     - MenuDropdown
-  - Profile
+  - ProfileContainer
     - UserDetailHeader
       - Link (Edit Profile)
-    - UserInfoPanel
-    - UserPhotosPanel
-    - UserFriendsListPanel
-    - WallFeed
-    - Post
-    - Comment
-    PostForm
-  - NewsFeed
+    - UserInfoPanelContainer
+      - UserInfoPanel
+    - UserPhotosPanelContainer
+      - UserPhotosPanel
+    - UserFriendsListPanelContainer
+      - UserFriendsListPanel
+    - WallFeedContainer
+      - PostContainer
+        - Post
+        - CommentsContainer
+          - Comments
+      - PostFormContainer
+        - PostForm
+  - NewsFeedContainer
     - LeftNavSidebar
       - Link (Profile)
       - Link (NewsFeed)
       - Link (Messenger)
-    - RightChatSidebar
+    - RightChatSidebarContainer
       - ChatFriend
       - SearchBar
-    - PostForm
-    - NewsFeed
-    - Post
-    - Comment
-  - LandingPage
-    - SignIn
-    - SignUp
+    - PostFormContainer
+      - PostForm
+    - PostContainer
+      - PostContainer
+      - CommentsContainer
+        - Comments
+  - LandingPageContainer
+    - SignInContainer
+      - SignIn
+    - SignUpContainer
+      - SignUp
+    - Copy
 
 
 ## Routes
