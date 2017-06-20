@@ -5,6 +5,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
             uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :birth_year, inclusion: { in: 1905..2017 }, presence: true
+  validates :birth_month, presence: true, inclusion: { in: 1..12 }
+  validates :birth_day, presence: true, inclusion: { in: 1..31 }
 
   attr_reader :password
 
