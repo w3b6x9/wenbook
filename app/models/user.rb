@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :birth_year, inclusion: { in: 1905..2017 }, presence: true
   validates :birth_month, presence: true, inclusion: { in: 1..12 }
   validates :birth_day, presence: true, inclusion: { in: 1..31 }
+  validates :gender, presence: true, inclusion: { in: %(Female Male) }
 
   attr_reader :password
 

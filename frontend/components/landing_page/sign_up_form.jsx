@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 export default class SignUpForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,9 @@ export default class SignUpForm extends React.Component {
       last_name: '',
       email: '',
       password: '',
+      birth_month: 0,
+      birth_day: 0,
+      birth_year: 0,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,6 +20,10 @@ export default class SignUpForm extends React.Component {
 
   handleChange(property) {
     return e => this.setState({ [property]: e.currentTarget.value });
+  }
+
+  handleSelectChange(property) {
+    return ({value}) => this.setState({ [property]: value });
   }
 
   handleSubmit(e) {
@@ -32,6 +40,27 @@ export default class SignUpForm extends React.Component {
           );
         })}
       </ul>
+    );
+  }
+
+  selectMonth() {
+    const options = [];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+      'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    for (let i = 1; i <= 12; i++) {
+      options.push({ value: i, label: months[i - 1] });
+    }
+
+    return (
+      <Select
+        placeholder="Month"
+        value={this.state.birth_month}
+        searchable={false}
+        clearable={false}
+        options={options}
+        onChange={this.handleSelectChange("birth_month")}
+      />
     );
   }
 
@@ -68,6 +97,9 @@ export default class SignUpForm extends React.Component {
             />
           </label>
           <input type='submit' value='Create Account' />
+          <label>
+            {this.selectMonth()}
+          </label>
         </form>
       </div>
     );
