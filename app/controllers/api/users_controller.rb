@@ -17,7 +17,11 @@ class Api::UsersController < ApplicationController
       :first_name,
       :last_name,
       :email,
-      :password
+      :password,
+      :birth_month,
+      :birth_day,
+      :birth_year,
+      :gender
     )
   end
 end
