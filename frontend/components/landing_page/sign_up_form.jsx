@@ -10,9 +10,9 @@ export default class SignUpForm extends React.Component {
       last_name: '',
       email: '',
       password: '',
-      birth_month: 0,
-      birth_day: 0,
-      birth_year: 0,
+      birth_month: null,
+      birth_day: null,
+      birth_year: null,
       gender: '',
     };
 
