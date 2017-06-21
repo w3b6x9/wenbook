@@ -3,6 +3,12 @@
     window.currentUser = <%= render("api/users/user.json.jbuilder",
       user: current_user).html_safe %>
   <% end %>
+
+  window.images = {
+    newspaper_icon: "<%= image_path('newspaper_icon.jpg') %>",
+    screen_icon: "<%= image_path('screen_icon.jpg') %>",
+    link_icon: "<%= image_path('link_icon.jpg') %>",
+  }
 </script>
 
 <main id="root"></main>

@@ -147,7 +147,7 @@ export default class SignUpForm extends React.Component {
               onChange={this.handleChange('password')}
               placeholder='New Password'
             />
-          <div className='sign-up-tag border-top'>
+          <div className='sign-up-tag margin-top'>
             <label>
               Birthday
                 <div className='birthday-dropdown'>
