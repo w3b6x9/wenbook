@@ -1,5 +1,4 @@
 import React from 'react';
-import Select from 'react-select';
 
 export default class SignUpForm extends React.Component {
   constructor(props) {
@@ -17,6 +16,7 @@ export default class SignUpForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   handleChange(property) {
@@ -24,7 +24,7 @@ export default class SignUpForm extends React.Component {
   }
 
   handleSelectChange(property) {
-    return ({value}) => this.setState({ [property]: value });
+    return e => this.setState({ [property]: e.target.value });
   }
 
   handleRadioChange(value) {
@@ -49,62 +49,68 @@ export default class SignUpForm extends React.Component {
   }
 
   selectMonth() {
-    const options = [];
+    const options = [
+      <option selected="selected" key={0}>Month</option>
+    ];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
       'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     for (let i = 1; i <= 12; i++) {
-      options.push({ value: i, label: months[i - 1] });
+      const month = months[i - 1];
+
+      options.push(
+        <option value={i}
+          key={i}
+        >{months[i - 1]}</option>
+      );
     }
 
     return (
-      <Select
-        placeholder='Month'
-        value={this.state.birth_month}
-        searchable={false}
-        clearable={false}
-        options={options}
+      <select className='select-dropdown'
         onChange={this.handleSelectChange('birth_month')}
-      />
+      >{options}
+      </select>
     );
   }
 
   selectDay() {
-    const options = [];
+    const options = [
+      <option selected="selected" key={0}>Day</option>
+    ];
 
     for (let i = 1; i <= 31; i++) {
-      options.push({ value: i, label: [i]});
+      options.push(
+        <option value={i}
+          key={i}
+        >{i}</option>
+      );
     }
 
     return (
-      <Select
-        placeholder='Day'
-        value={this.state.birth_day}
-        searchable={false}
-        clearable={false}
-        options={options}
+      <select className='select-dropdown'
         onChange={this.handleSelectChange('birth_day')}
-      />
+      >{options}</select>
     );
   }
 
   selectYear() {
-    const options = [];
+    const options = [
+      <option selected="selected" key={-1}>Year</option>
+    ];
 
-    this.props.years.forEach(year => (
-      options.push({ value: year, label: [year] })
+    this.props.years.forEach((year, idx) => (
+      options.push(
+        <option value={year}
+          key={idx}
+        >{year}</option>
+      )
     ));
 
     return (
-      <Select
-        placeholder='Year'
-        value={this.state.birth_year}
-        searchable={false}
-        clearable={false}
-        options={options}
+      <select className='select-dropdown'
         onChange={this.handleSelectChange('birth_year')}
-      />
-  );
+      >{options}</select>
+    );
   }
 
   render() {
@@ -145,13 +151,13 @@ export default class SignUpForm extends React.Component {
             <label>
               Birthday
                 <div className='birthday-dropdown'>
-                  <div className='select-dropdown'>
+                  <div>
                     { this.selectMonth() }
                   </div>
-                  <div className='select-dropdown'>
+                  <div>
                     { this.selectDay() }
                   </div>
-                  <div className='select-dropdown'>
+                  <div>
                     { this.selectYear() }
                   </div>
                 </div>
