@@ -1,0 +1,37 @@
+.signed-out-nav {
+  height: 82px;
+  background-color: $primary;
+  color: black;
+  background-image: linear-gradient($primary-light, $primary 50%);
+  border-bottom: 1px solid #133783;
+
+  p.logo {
+    color: white;
+    font-family: 'Klavika';
+    font-size: 40px;
+    margin-top: 3px;
+  }
+}
+
+.log-in-btn {
+  color: white;
+  background-color: $primary;
+  border: 1px solid $btn-border;
+  margin-top: 17px;
+}
+
+.sign-in-form {
+  display: flex;
+}
+
+.form-header {
+  color: white;
+  font-size: 12px;
+}
+
+.input-form {
+  margin-right: 14px;
+  border: 1px solid $btn-border;
+  height: 20px;
+  width: 145px;
+}

@@ -1,0 +1,84 @@
+body, ul {
+  margin: 0;
+}
+
+.sign-up-form {
+  width: 399px;
+}
+
+.sign-up-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-background {
+  background-color: #edf0f5;
+  height: 560px;
+}
+
+.sign-up-text {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.sign-up-tag {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.input-box-small {
+  font-size: 18px;
+  height: 35px;
+  width: 172px;
+  margin-right: 7px;
+  border-radius: 5px;
+  border: 1px solid $btn-border-grey;
+}
+
+.input-box {
+  font-size: 18px;
+  height: 35px;
+  width: 356px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid $btn-border-grey;
+}
+
+.select-dropdown {
+  font-size: 13px;
+  height: 30px;
+  width: 60px;
+  border: 1px solid $btn-border-grey;
+  background-color: white;
+  text-align: center;
+}
+
+.name-input {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.border-top {
+  margin-top: 15px;
+}
+
+.birthday-dropdown {
+  display: flex;
+}
+
+.radio-gender {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.btn-create {
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  font-size: 19px;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 7px;
+  margin-top: 20px;
+}

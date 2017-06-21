@@ -5,9 +5,7 @@ import LandingPage from './landing_page/landing_page';
 
 const App = () => {
   return (
-    <div>
-      <AuthRoute exact path='/' component={ LandingPage } />
-    </div>
+    <AuthRoute exact path='/' component={ LandingPage } />
   );
 };
 

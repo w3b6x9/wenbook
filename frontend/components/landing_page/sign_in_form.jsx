@@ -37,21 +37,33 @@ export default class SignInForm extends React.Component {
     return (
       <div>
         {this.signInErrors()}
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Email
-            <input type='text'
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-            />
-          </label>
-          <label>
-            Password
-            <input type='password'
-              onChange={this.handleChange('password')}
-            />
-          </label>
-          <input type='submit' value='Log In' />
+        <form className='sign-in-form' onSubmit={this.handleSubmit}>
+          <div>
+            <label>
+              <div className='form-header'>
+                Email
+              </div>
+              <input className='input-form'
+                type='text'
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              <div className='form-header'>
+                Password
+              </div>
+              <input className='input-form'
+                type='password'
+                onChange={this.handleChange('password')}
+              />
+            </label>
+          </div>
+          <div>
+            <input className='log-in-btn' type='submit' value='Log In' />
+          </div>
         </form>
       </div>
     );

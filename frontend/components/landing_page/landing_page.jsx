@@ -6,9 +6,22 @@ export default class LandingPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Landing Page!</h1>
-        <SignInFormContainer />
-        <SignUpFormContainer />
+        <div className='signed-out-nav'>
+          <div className='container'>
+            <p className='logo'>wenbook</p>
+            <SignInFormContainer />
+            </div>
+        </div>
+        <div className="landing-background">
+          <div className='container'>
+            <div>
+              Words...
+            </div>
+            <div className='sign-up-form'>
+              <SignUpFormContainer />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

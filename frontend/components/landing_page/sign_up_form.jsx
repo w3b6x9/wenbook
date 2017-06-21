@@ -112,60 +112,69 @@ export default class SignUpForm extends React.Component {
 
     return (
       <div>
+        <div className='sign-up-text'>Sign Up</div>
+        <div className='sign-up-tag'>It's free and always will be.</div>
         {this.signUpErrors()}
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            First name
-            <input type='text'
+        <form className='sign-up-inner'>
+          <div className='name-input'>
+            <input className='input-box-small'
+              type='text'
               value={first_name}
               onChange={this.handleChange('first_name')}
+              placeholder='First name'
             />
-          </label>
-          <label>
-            Last name
-            <input type='text'
+            <input className='input-box-small'
+              type='text'
               value={last_name}
               onChange={this.handleChange('last_name')}
+              placeholder='Last name'
             />
-          </label>
-          <label>
-            Email
-            <input type='text'
+          </div>
+            <input className='input-box'
+              type='text'
               value={email}
               onChange={this.handleChange('email')}
+              placeholder='Email'
             />
-          </label>
-          <label>
-            Password
-            <input type='password'
+          <input className='input-box'
+              type='password'
               onChange={this.handleChange('password')}
+              placeholder='New Password'
             />
-          </label>
-          <input type='submit' value='Create Account' />
-          <br />
-          <label>
-            Birthday
-            { this.selectMonth() }
-            { this.selectDay() }
-            { this.selectYear() }
-          </label>
-          <label>
-            Gender
+          <div className='sign-up-tag border-top'>
             <label>
-              Female
+              Birthday
+                <div className='birthday-dropdown'>
+                  <div className='select-dropdown'>
+                    { this.selectMonth() }
+                  </div>
+                  <div className='select-dropdown'>
+                    { this.selectDay() }
+                  </div>
+                  <div className='select-dropdown'>
+                    { this.selectYear() }
+                  </div>
+                </div>
+            </label>
+          </div>
+          <div>
+            <label className='radio-gender'>
               <input type='radio' value='Female'
                 onChange={this.handleRadioChange.bind(this, 'Female')}
                 checked={gender === 'Female'}
               />
+              Female
             </label>
-            <label>
-              Male
+            <label className='radio-gender'>
               <input type='radio' value='Male'
                 onChange={this.handleRadioChange.bind(this, 'Male')}
                 checked={gender === 'Male'}
                 />
+              Male
             </label>
-          </label>
+          </div>
+          <button className='btn-create' onClick={this.handleSubmit}
+            type='submit'>Create Account</button>
         </form>
       </div>
     );
