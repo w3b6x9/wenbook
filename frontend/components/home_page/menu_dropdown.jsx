@@ -9,7 +9,6 @@ export default class MenuDropdown extends React.Component {
   render() {
     return (
       <div className='dropdown'>
-        <h1>Hi there!</h1>
         <Link to='/' onClick={this.props.signOut} replace>Log Out</Link>
       </div>
     );

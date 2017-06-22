@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MenuDropdownContainer from './menu_dropdown_container';
-import { displayDropdown } from '../../actions/dropdown_actions';
+import { displayDropdown, clearDropdown } from '../../actions/dropdown_actions';
 import NavigationBar from './navigation_bar';
 
 const mapStateToProps = state => {
@@ -13,6 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     displayDropdown: () => dispatch(displayDropdown({ menu: true })),
+    clearDropdown: () => dispatch(clearDropdown()),
   };
 };
 

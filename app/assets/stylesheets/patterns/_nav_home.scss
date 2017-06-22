@@ -1,6 +1,4 @@
 .signed-in-nav {
-  display: flex;
-  justify-content: space-around;
   height: 42px;
   background-color: $primary;
   color: black;
@@ -8,13 +6,48 @@
   border-bottom: 1px solid $navbar-bottom;
 }
 
-.fa-caret-down:before {
+i.icon-small {
   font-size: 20px;
+  margin-left: 15px;
+}
+
+i.icon-normal {
+  font-size: 30px;
+  color: white;
 }
 
 .dropdown {
   position: absolute;
-  height: 280px;
-  width: 190px;
+  height: 35px;
+  width: 170px;
   background-color: white;
+  border: 1px solid $btn-border-grey;
+  right: 20.5%;
+  top: 43px;
+}
+
+.nav-section-right {
+  display: flex;
+  padding-top: 3px;
+}
+
+.active-section {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 6px;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.pipe {
+  color: #1D2951;
+  margin-left: 15px;
+}
+
+.home-btn {
+  text-decoration: none;
+  color: white;
 }
