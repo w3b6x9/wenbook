@@ -49,7 +49,10 @@ export default class SignInForm extends React.Component {
               <div className='form-header'>
                 Email
               </div>
-              <input className='input-form'
+              <input className={
+                  this.props.errors.length > 0 ?
+                    'input-form error-border-log-in' : 'input-form'
+                }
                 type='text'
                 value={this.state.email}
                 onChange={this.handleChange('email')}
@@ -61,7 +64,10 @@ export default class SignInForm extends React.Component {
               <div className='form-header'>
                 Password
               </div>
-              <input className='input-form'
+              <input className={
+                  this.props.errors.length > 0 ?
+                    'input-form error-border-log-in' : 'input-form'
+                }
                 type='password'
                 onChange={this.handleChange('password')}
               />
@@ -76,7 +82,7 @@ export default class SignInForm extends React.Component {
             />
           </div>
         </form>
-        <div>{this.signInErrors()}</div>
+        {this.signInErrors()}
       </div>
     );
   }

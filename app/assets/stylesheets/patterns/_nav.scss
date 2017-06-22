@@ -41,3 +41,13 @@
   display: flex;
   justify-content: space-around;
 }
+
+.error {
+  list-style: none;
+  color: $error;
+  margin-left: -40px;
+}
+
+.error-border {
+  border: 2.5px solid $error;
+}
