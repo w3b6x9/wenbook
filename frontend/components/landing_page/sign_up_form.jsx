@@ -159,21 +159,29 @@ export default class SignUpForm extends React.Component {
                 </div>
             </label>
           </div>
-          <div>
-            <label className='radio-gender'>
-              <input type='radio' value='Female'
-                onChange={this.handleRadioChange.bind(this, 'Female')}
-                checked={gender === 'Female'}
-              />
-              Female
-            </label>
-            <label className='radio-gender'>
-              <input type='radio' value='Male'
-                onChange={this.handleRadioChange.bind(this, 'Male')}
-                checked={gender === 'Male'}
+          <div className='radio-section'>
+            <div>
+              <label className='radio-gender'>
+                <input type='radio'
+                  value='Female'
+                  className='radio-select'
+                  onChange={this.handleRadioChange.bind(this, 'Female')}
+                  checked={gender === 'Female'}
                 />
-              Male
-            </label>
+                <div>Female</div>
+              </label>
+            </div>
+            <div>
+              <label className='radio-gender'>
+                <input type='radio'
+                  value='Male'
+                  className='radio-select'
+                  onChange={this.handleRadioChange.bind(this, 'Male')}
+                  checked={gender === 'Male'}
+                  />
+                <div>Male</div>
+              </label>
+            </div>
           </div>
           <button className='btn-create' onClick={this.handleSubmit}
             type='submit'>Create Account</button>

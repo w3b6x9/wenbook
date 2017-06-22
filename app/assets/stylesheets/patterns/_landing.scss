@@ -21,25 +21,27 @@
 
 .sign-up-tag {
   font-size: 19px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .input-box-small {
   font-size: 18px;
   height: 35px;
-  width: 187px;
+  width: 180px;
   margin-right: 7px;
   border-radius: 5px;
   border: 1px solid $btn-border-grey;
+  padding-left: 10px;
 }
 
 .input-box {
   font-size: 18px;
   height: 35px;
-  width: 385px;
+  width: 380px;
   margin-top: 5px;
   border-radius: 5px;
   border: 1px solid $btn-border-grey;
+  padding-left: 10px;
 }
 
 .select-dropdown {
@@ -66,8 +68,17 @@
 }
 
 .radio-gender {
+  display: flex;
   font-size: 18px;
   margin-right: 20px;
+}
+
+.radio-section {
+  display: flex;
+}
+
+.radio-select {
+  margin-top: 6px;
 }
 
 .btn-create {
