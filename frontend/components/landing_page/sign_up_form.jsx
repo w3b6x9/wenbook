@@ -38,7 +38,7 @@ export default class SignUpForm extends React.Component {
 
   signUpErrors() {
     return(
-      <ul>
+      <ul className='error'>
         {this.props.errors.map((error, idx) => {
           return (
             <li key={idx}>{error}</li>
@@ -120,25 +120,21 @@ export default class SignUpForm extends React.Component {
       <div>
         <div className='sign-up-text'>Sign Up</div>
         <div className='sign-up-tag'>It's free and always will be.</div>
-        {this.signUpErrors()}
         <form className='sign-up-inner'>
           <div className='name-input'>
             <input className='input-box-small'
               type='text'
-              value={first_name}
               onChange={this.handleChange('first_name')}
               placeholder='First name'
             />
             <input className='input-box-small'
               type='text'
-              value={last_name}
               onChange={this.handleChange('last_name')}
               placeholder='Last name'
             />
           </div>
             <input className='input-box'
               type='text'
-              value={email}
               onChange={this.handleChange('email')}
               placeholder='Email'
             />
@@ -182,6 +178,7 @@ export default class SignUpForm extends React.Component {
           <button className='btn-create' onClick={this.handleSubmit}
             type='submit'>Create Account</button>
         </form>
+        <div>{this.signUpErrors()}</div>
       </div>
     );
   }
