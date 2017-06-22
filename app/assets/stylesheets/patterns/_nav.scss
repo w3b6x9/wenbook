@@ -3,7 +3,7 @@
   background-color: $primary;
   color: black;
   background-image: linear-gradient($primary-light, $primary 50%);
-  border-bottom: 1px solid #133783;
+  border-bottom: 1px solid $navbar-bottom;
 
   p.logo {
     color: white;
