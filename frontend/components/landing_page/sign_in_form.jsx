@@ -9,6 +9,7 @@ export default class SignInForm extends React.Component {
       password: '',
     };
 
+    this.signInGuest = this.signInGuest.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -19,6 +20,12 @@ export default class SignInForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signIn(this.state);
+  }
+
+  signInGuest(e) {
+    e.preventDefault();
+    const user = { email: 'wenbox323@gmail.com', password: 'password' };
+    this.props.signIn(user);
   }
 
   signInErrors() {
@@ -61,8 +68,13 @@ export default class SignInForm extends React.Component {
               />
             </label>
           </div>
-          <div>
+          <div className='buttons-row'>
             <input className='log-in-btn' type='submit' value='Log In' />
+            <input className='log-in-btn'
+              type='submit'
+              onClick={this.signInGuest}
+              value='Guest'
+            />
           </div>
         </form>
       </div>

@@ -18,6 +18,7 @@
   background-color: $primary;
   border: 1px solid $btn-border;
   margin-top: 17px;
+  margin-right: 10px;
 }
 
 .sign-in-form {
@@ -34,4 +35,9 @@
   border: 1px solid $btn-border;
   height: 20px;
   width: 145px;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-around;
 }
