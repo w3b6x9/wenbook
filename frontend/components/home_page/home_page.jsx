@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationBar from './navigation_bar';
+import NavigationBarContainer from './navigation_bar_container';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <NavigationBar />
+        <NavigationBarContainer />
       </div>
     );
   }

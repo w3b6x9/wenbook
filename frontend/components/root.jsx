@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
-import App from './App';
+import AppContainer from './App_container';
 
 const Root = ({ store }) => {
   return (
     <Provider store={ store }>
       <HashRouter>
-        <App />
+        <AppContainer />
       </HashRouter>
     </Provider>
   );
