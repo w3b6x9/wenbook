@@ -1,0 +1,20 @@
+.signed-in-nav {
+  display: flex;
+  justify-content: space-around;
+  height: 42px;
+  background-color: $primary;
+  color: black;
+  background-image: linear-gradient($primary-light, $primary 50%);
+  border-bottom: 1px solid $navbar-bottom;
+}
+
+.fa-caret-down:before {
+  font-size: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  height: 280px;
+  width: 190px;
+  background-color: white;
+}
