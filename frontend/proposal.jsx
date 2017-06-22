@@ -17,11 +17,3 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);
 });
-
-//Testing:
-
-import { signIn, signUp, signOut } from './util/session_api_util';
-
-window.signIn = signIn;
-window.signUp = signUp;
-window.signOut = signOut;
