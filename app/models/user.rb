@@ -1,9 +1,12 @@
 class User < ApplicationRecord
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   validates :password_digest, :session_token, presence: true
   validates :first_name, :last_name, presence: true,
-            length: { minimum: 2, maximum: 50 }
+            length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
-            uniqueness: { case_sensitive: false }
+            uniqueness: { case_sensitive: false },
+            format: { with: VALID_EMAIL_REGEX }
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :birth_year, presence: true, inclusion: { in: 1905..2017 }
   validates :birth_month, presence: true, inclusion: { in: 1..12 }
