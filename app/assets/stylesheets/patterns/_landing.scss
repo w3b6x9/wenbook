@@ -121,3 +121,16 @@
   font-size: 17px;
   margin-top: 8px;
 }
+
+.error-border {
+  border: 1.3px solid $error;
+  border-radius: 5px;
+}
+
+.error-msg-bottom {
+  color: $error;
+}
+
+.radio-text {
+  margin-right: 5px;
+}

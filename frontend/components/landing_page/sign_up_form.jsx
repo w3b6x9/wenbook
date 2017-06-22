@@ -48,7 +48,7 @@ export default class SignUpForm extends React.Component {
     );
   }
 
-  selectMonth() {
+  selectMonth(birthMonthError) {
     const options = [
       <option selected="selected" key={0}>Month</option>
     ];
@@ -66,14 +66,14 @@ export default class SignUpForm extends React.Component {
     }
 
     return (
-      <select className='select-dropdown'
+      <select className={birthMonthError ? 'select-dropdown error-border' : 'select-dropdown'}
         onChange={this.handleSelectChange('birth_month')}
       >{options}
       </select>
     );
   }
 
-  selectDay() {
+  selectDay(birthDayError) {
     const options = [
       <option selected="selected" key={0}>Day</option>
     ];
@@ -87,13 +87,13 @@ export default class SignUpForm extends React.Component {
     }
 
     return (
-      <select className='select-dropdown'
+      <select className={birthDayError ? 'select-dropdown error-border' : 'select-dropdown'}
         onChange={this.handleSelectChange('birth_day')}
       >{options}</select>
     );
   }
 
-  selectYear() {
+  selectYear(birthYearError) {
     const options = [
       <option selected="selected" key={-1}>Year</option>
     ];
@@ -107,7 +107,7 @@ export default class SignUpForm extends React.Component {
     ));
 
     return (
-      <select className='select-dropdown'
+      <select className={birthYearError ? 'select-dropdown error-border' : 'select-dropdown'}
         onChange={this.handleSelectChange('birth_year')}
       >{options}</select>
     );
@@ -115,6 +115,16 @@ export default class SignUpForm extends React.Component {
 
   render() {
     const { first_name, last_name, email, gender } = this.state;
+    const firstNameError = this.props.errors.includes('First name can\'t be blank');
+    const lastNameError = this.props.errors.includes('Last name can\'t be blank');
+    const emailBlankError = this.props.errors.includes('Email can\'t be blank');
+    const emailInvalidError = this.props.errors.includes('Email is invalid');
+    const emailTakenError = this.props.errors.includes('Email has already been taken');
+    const passwordBlankError = this.props.errors.includes('Password is too short (minimum is 6 characters)');
+    const birthYearError = this.props.errors.includes('Birth year can\'t be blank');
+    const birthMonthError = this.props.errors.includes('Birth month can\'t be blank');
+    const birthDayError = this.props.errors.includes('Birth day can\'t be blank');
+    const genderError = this.props.errors.includes('Gender can\'t be blank');
 
     return (
       <div>
@@ -122,71 +132,84 @@ export default class SignUpForm extends React.Component {
         <div className='sign-up-tag'>It's free and always will be.</div>
         <form className='sign-up-inner'>
           <div className='name-input'>
-            <input className='input-box-small'
-              type='text'
-              onChange={this.handleChange('first_name')}
-              placeholder='First name'
-            />
-            <input className='input-box-small'
-              type='text'
-              onChange={this.handleChange('last_name')}
-              placeholder='Last name'
-            />
+            <div>
+              <input className={firstNameError ? 'input-box-small error-border' : 'input-box-small'}
+                type='text'
+                onChange={this.handleChange('first_name')}
+                placeholder='First name'
+              />
+              {firstNameError ? <div className='error-msg-bottom'>First name can't be blank</div> : null}
+            </div>
+            <div>
+              <input className={lastNameError ? 'input-box-small error-border' : 'input-box-small'}
+                type='text'
+                onChange={this.handleChange('last_name')}
+                placeholder='Last name'
+              />
+              {firstNameError ? <div className='error-msg-bottom'>Last name can't be blank</div> : null}
+            </div>
           </div>
-            <input className='input-box'
+          <div>
+            <input className={(emailBlankError || emailInvalidError || emailTakenError) ? 'input-box error-border' : 'input-box'}
               type='text'
               onChange={this.handleChange('email')}
               placeholder='Email'
             />
-          <input className='input-box'
+            {emailBlankError ? <div className='error-msg-bottom'>Email can't be blank</div> : null ||
+              emailInvalidError ? <div className='error-msg-bottom'>Email is invalid</div> : null}
+            {emailTakenError ? <div className='error-msg-bottom'>Email has already been taken</div> : null}
+          </div>
+          <div>
+            <input className={passwordBlankError ? 'input-box error-border' : 'input-box'}
               type='password'
               onChange={this.handleChange('password')}
               placeholder='New Password'
             />
+          {passwordBlankError ? <div className='error-msg-bottom'>Password minimum length is 6 characters</div> : null}
+          </div>
           <div className='sign-up-tag margin-top'>
             <label>
               Birthday
                 <div className='birthday-dropdown'>
                   <div>
-                    { this.selectMonth() }
+                    { this.selectMonth(birthMonthError) }
                   </div>
                   <div>
-                    { this.selectDay() }
+                    { this.selectDay(birthDayError) }
                   </div>
                   <div>
-                    { this.selectYear() }
+                    { this.selectYear(birthYearError) }
                   </div>
                 </div>
             </label>
           </div>
           <div className='radio-section'>
             <div>
-              <label className='radio-gender'>
+              <label className={genderError ? 'radio-gender error-border' : 'radio-gender'}>
                 <input type='radio'
                   value='Female'
                   className='radio-select'
                   onChange={this.handleRadioChange.bind(this, 'Female')}
                   checked={gender === 'Female'}
                 />
-                <div>Female</div>
+              <div className='radio-text'>Female</div>
               </label>
             </div>
             <div>
-              <label className='radio-gender'>
+              <label className={genderError ? 'radio-gender error-border' : 'radio-gender'}>
                 <input type='radio'
                   value='Male'
                   className='radio-select'
                   onChange={this.handleRadioChange.bind(this, 'Male')}
                   checked={gender === 'Male'}
                   />
-                <div>Male</div>
+                <div className='radio-text'>Male</div>
               </label>
             </div>
           </div>
           <button className='btn-create' onClick={this.handleSubmit}
             type='submit'>Create Account</button>
         </form>
-        <div>{this.signUpErrors()}</div>
       </div>
     );
   }
