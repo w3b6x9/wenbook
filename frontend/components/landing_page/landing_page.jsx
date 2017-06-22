@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignInFormContainer from './sign_in_form_container';
 import SignUpFormContainer from './sign_up_form_container';
 
@@ -8,9 +9,9 @@ export default class LandingPage extends React.Component {
       <div>
         <div className='signed-out-nav'>
           <div className='container'>
-            <p className='logo'>wenbook</p>
+            <Link to='/' className='logo-text'>wenbook</Link>
             <SignInFormContainer />
-            </div>
+          </div>
         </div>
         <div className="landing-background">
           <div className='container'>

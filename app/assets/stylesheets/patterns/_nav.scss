@@ -4,13 +4,6 @@
   color: black;
   background-image: linear-gradient($primary-light, $primary 50%);
   border-bottom: 1px solid $navbar-bottom;
-
-  p.logo {
-    color: white;
-    font-family: 'Klavika';
-    font-size: 40px;
-    margin-top: 3px;
-  }
 }
 
 .log-in-btn {
@@ -50,4 +43,12 @@
 
 .error-border-log-in {
   border: 2px solid $error;
+}
+
+.logo-text {
+  text-decoration: none;
+  color: white;
+  font-family: 'Klavika';
+  font-size: 40px;
+  margin-top: 3px;
 }
