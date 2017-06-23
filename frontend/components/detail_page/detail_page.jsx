@@ -1,5 +1,5 @@
 import React from 'react';
-import Profile from './profile';
+import ProfileContainer from './profile_container';
 
 export default class DetailPage extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export default class DetailPage extends React.Component {
   render() {
     return (
       <div>
-        <Profile />
+        <ProfileContainer />
       </div>
     );
   }

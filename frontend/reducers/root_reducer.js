@@ -4,8 +4,8 @@ import dropdown from './dropdown_reducer';
 import user from './user_reducer';
 
 const RootReducer = combineReducers({
-  session,
   dropdown,
+  session,
   user,
 });
 

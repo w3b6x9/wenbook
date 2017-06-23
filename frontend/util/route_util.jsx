@@ -4,33 +4,25 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 import HomePage from '../components/home_page/home_page';
 import LandingPage from '../components/landing_page/landing_page';
 
-const Auth = ({ component: Component, path, signedIn }) => {
-  return (
-    <Route path={ path } render={props => (
-      !signedIn ? (
-        <Component { ...props } />
-      ) : (
-        <Redirect to='/' />
-      )
-    )} />
-  );
-};
+const Auth = ({ component: Component, path, signedIn, exact }) => (
+  <Route exact={exact} path={path} render={(props) => (
+    !signedIn ? (
+      <Component {...props} />
+    ) : (
+      <Redirect to='/' />
+    )
+  )} />
+);
 
-const Protected = ({ component: Component, path, signedIn }) => {
-  return (
-    <Route path={ path } render={props => {
-      if (signedIn) {
-        return (
-          <Component { ...props } />
-        );
-      } else {
-        return (
-          <Redirect to='/' />
-        );
-      }
-    }}
-  />);
-};
+const Protected = ({ component: Component, path, signedIn, exact }) => (
+  <Route exact={exact} path={path} render={(props) => (
+     signedIn ? (
+      <Component {...props} />
+    ) : (
+      <Redirect to='/' />
+    )
+  )} />
+);
 
 const mapStateToProps = ({session}) => {
   return {
