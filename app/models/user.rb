@@ -13,6 +13,9 @@ class User < ApplicationRecord
   validates :birth_day, presence: true, inclusion: { in: 1..31 }
   validates :gender, presence: true, inclusion: { in: %w(Female Male) }
 
+  has_attached_file :profile_picture
+  validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\z/
+
   attr_reader :password
 
   after_initialize :ensure_session_token
