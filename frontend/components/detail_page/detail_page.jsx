@@ -8,8 +8,10 @@ export default class DetailPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <ProfileContainer />
+      <div className='detail-body'>
+        <div className='detail-header-section'>
+          <ProfileContainer />
+        </div>
       </div>
     );
   }

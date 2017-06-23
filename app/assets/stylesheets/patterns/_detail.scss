@@ -1,0 +1,35 @@
+.detail-body {
+  height: 800px;
+  background: $background-grey;
+}
+
+.detail-header-section {
+  height: 204px;
+  width: 851px;
+  margin: auto;
+}
+
+.cover-info {
+  display: flex;
+}
+
+.cover-full-name {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  left: auto;
+  top: auto;
+  margin-top: 150px;
+  margin-left: 210px;
+}
+
+.profile-pic {
+  position: absolute;
+  height: 168px;
+  width: 168px;
+  left: auto;
+  top: auto;
+  margin-top: 70px;
+  margin-left: 20px;
+}
