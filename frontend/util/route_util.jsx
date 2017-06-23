@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import HomePage from '../components/home_page/home_page';
+import LandingPage from '../components/landing_page/landing_page';
 
 const Auth = ({ component: Component, path, signedIn }) => {
   return (
@@ -9,10 +10,26 @@ const Auth = ({ component: Component, path, signedIn }) => {
       !signedIn ? (
         <Component { ...props } />
       ) : (
-        <HomePage />
+        <Redirect to='/' />
       )
     )} />
   );
+};
+
+const Protected = ({ component: Component, path, signedIn }) => {
+  return (
+    <Route path={ path } render={props => {
+      if (signedIn) {
+        return (
+          <Component { ...props } />
+        );
+      } else {
+        return (
+          <Redirect to='/' />
+        );
+      }
+    }}
+  />);
 };
 
 const mapStateToProps = ({session}) => {
@@ -21,4 +38,5 @@ const mapStateToProps = ({session}) => {
   };
 };
 
-export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
+export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
