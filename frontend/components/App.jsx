@@ -13,6 +13,7 @@ const App = props => {
       <ProtectedRoute path='/' component={ NavigationBarContainer } />
       <ProtectedRoute exact={true} path='/' component={ HomePage } />
       <ProtectedRoute path='/profile/:userId' component={ DetailPage } />
+      <ProtectedRoute path='/profile/:userId/about' component={ DetailPage } />
     </div>
   );
 };

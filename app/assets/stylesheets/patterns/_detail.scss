@@ -43,8 +43,17 @@
 }
 
 .profile-navbar {
-  display: flex;
-  justify-content: center;
   background-color: white;
   height: 55px;
+}
+
+.profile-navbar-tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 25%;
+  margin-top: 13px;
+}
+
+.profile-navbar-tab {
+  margin-right: 20px;
 }
