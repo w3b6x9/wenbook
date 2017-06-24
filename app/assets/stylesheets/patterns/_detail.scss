@@ -31,6 +31,20 @@
   width: 168px;
   left: auto;
   top: auto;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-left: 20px;
+  border: 3.5px solid white;
+  border-radius: 3px;
+}
+
+.header-subsection {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-navbar {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 55px;
 }
