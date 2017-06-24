@@ -1,12 +1,21 @@
 .detail-body {
-  height: 800px;
+  display: flex;
+  flex-direction: column;
+  min-height: 800px;
   background: $background-grey;
 }
 
 .detail-header-section {
   height: 204px;
   width: 851px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+.profile-navbar {
+  background-color: white;
+  height: 55px;
+  width: 851px;
+  margin: 0 auto;
 }
 
 .cover-info {
@@ -37,23 +46,45 @@
   border-radius: 3px;
 }
 
-.header-subsection {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-navbar {
-  background-color: white;
-  height: 55px;
-}
-
 .profile-navbar-tabs {
   display: flex;
   justify-content: flex-start;
   margin-left: 25%;
-  margin-top: 13px;
 }
 
 .profile-navbar-tab {
+  margin-top: 14px;
   margin-right: 20px;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  width: 851px;
+  margin: 25px auto;
+  border: 1px solid $error;
+}
+
+.about-subsection {
+  display: flex;
+}
+
+.about-tab {
+  border: 1px solid blue;
+  flex-basis: 30%;
+  background: white;
+  min-height: 400px;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid black;
+  flex-basis: 70%;
+  background: white;
+  min-height: 400px;
+}
+
+.about-item {
 }

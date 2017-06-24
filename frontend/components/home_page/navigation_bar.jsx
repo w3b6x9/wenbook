@@ -26,7 +26,7 @@ export default class NavigationBar extends React.Component {
           </div>
           <div className='nav-section-right'>
             <div>
-              <Link to='/' className='home-btn'>Home</Link>
+              <Link to='/' className='home-btn' replace>Home</Link>
             </div>
             <div>
               <i className="fa fa-users icon-small" aria-hidden="true"></i>
