@@ -12,7 +12,7 @@ const App = props => {
       <AuthRoute exact={true} path='/' component={ LandingPage } />
       <ProtectedRoute path='/' component={ NavigationBarContainer } />
       <ProtectedRoute exact={true} path='/' component={ HomePage } />
-      <ProtectedRoute path='/users/:userId' component={ DetailPage } />
+      <ProtectedRoute path='/profile/:userId' component={ DetailPage } />
     </div>
   );
 };
