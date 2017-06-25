@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NameFormContainer from './name_form_container';
 import EmailFormContainer from './email_form_container';
 import GenderFormContainer from './gender_form_container';
+import BirthdayFormContainer from './birthday_form_container';
 
 export default class ProfileAbout extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class ProfileAbout extends React.Component {
       showNameForm: false,
       showEmailForm: false,
       showGenderForm: false,
+      showBirthdayForm: false,
     };
   }
 
@@ -69,6 +71,13 @@ export default class ProfileAbout extends React.Component {
             </div>
             <div className='about-item'>
               { birth_month + '/' + birth_day + '/' + birth_year }
+              { id === this.props.currentUser.id ?
+                this.state.showBirthdayForm ? <BirthdayFormContainer /> :
+                  <Link to={this.props.location.pathname}
+                    onClick={this.formClicked('showBirthdayForm')}
+                      replace>Edit your birthday</Link> :
+                        null
+              }
             </div>
           </div>
         </div>
