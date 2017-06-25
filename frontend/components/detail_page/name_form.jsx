@@ -9,20 +9,8 @@ export default class NameForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps({user}) {
-    if (this.props.user.id !== user.id) {
-      this.setState({
-        id: user.id,
-        first_name: user.first_name,
-        last_name: user.last_name,
-      });
-    }
-  }
-
   handleChange(property) {
-    return e => {
-      return this.setState({ [property]: e.currentTarget.value });
-    };
+    return e => this.setState({ [property]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
