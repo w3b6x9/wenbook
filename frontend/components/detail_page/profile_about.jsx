@@ -42,8 +42,8 @@ export default class ProfileAbout extends React.Component {
           <div className='about-tab'>
             <Link to={pathname} replace>Overview</Link>
           </div>
-          <div className='about-main'>
-            <div className='about-item'>
+          <ul className='about-main'>
+            <li className='about-item'>
               { first_name + ' ' + last_name }
               { id === this.props.currentUser.id ?
                 this.state.showNameForm ? <NameFormContainer /> :
@@ -52,8 +52,8 @@ export default class ProfileAbout extends React.Component {
                       replace>Edit your name</Link> :
                         null
               }
-            </div>
-            <div className='about-item'>
+            </li>
+            <li className='about-item'>
               { email }
               { id === this.props.currentUser.id ?
                 this.state.showEmailForm ? <EmailFormContainer /> :
@@ -62,8 +62,8 @@ export default class ProfileAbout extends React.Component {
                       replace>Edit your email</Link> :
                         null
               }
-            </div>
-            <div className='about-item'>
+            </li>
+            <li className='about-item'>
               { gender }
               { id === this.props.currentUser.id ?
                 this.state.showGenderForm ? <GenderFormContainer /> :
@@ -72,8 +72,8 @@ export default class ProfileAbout extends React.Component {
                       replace>Edit your gender</Link> :
                         null
               }
-            </div>
-            <div className='about-item'>
+            </li>
+            <li className='about-item'>
               { birth_month + '/' + birth_day + '/' + birth_year }
               { id === this.props.currentUser.id ?
                 this.state.showBirthdayForm ? <BirthdayFormContainer /> :
@@ -82,8 +82,8 @@ export default class ProfileAbout extends React.Component {
                       replace>Edit your birthday</Link> :
                         null
               }
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     );

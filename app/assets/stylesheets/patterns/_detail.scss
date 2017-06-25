@@ -69,26 +69,33 @@
 }
 
 .about-tab {
-  flex-basis: 30%;
+  flex-basis: 28%;
   background: white;
   min-height: 400px;
   border-right: 1px solid $btn-border-grey;
   padding: 12px 4px 12px 16px;
 }
 
-.about-main {
+ul.about-main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  flex-basis: 70%;
+  flex-basis: 72%;
   background: white;
   min-height: 400px;
   padding: 20px 24px;
 }
 
-.about-item {
+li.about-item {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid $background-grey;
+  padding-bottom: 30px;
+}
+
+li.about-item:last-child {
+  border-bottom: none;
+  padding-bottom: 5px;
 }
 
 .about-header {
