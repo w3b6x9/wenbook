@@ -35,7 +35,7 @@ export default class ProfileAbout extends React.Component {
     return (
       <div className='about-section'>
         <div className='about-header'>
-          <i className="fa fa-user user-icon" aria-hidden="true"></i>
+          <i className="fa fa-user user-icon" aria-hidden="true" />
           <Link to={pathname} replace>About</Link>
         </div>
         <div className='about-subsection'>

@@ -142,3 +142,58 @@ i.user-icon {
 i.edit-icon {
   padding: 0 4px;
 }
+
+i.icon {
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+i.gender-icon {
+  font-size: 14px;
+  padding: 0 7px;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 36%;
+  width: 321px;
+  height: 165px;
+  margin-right: 2%;
+  background: white;
+}
+
+.timeline-section {
+  display: flex;
+  margin: 20px auto;
+  width: 851px;
+}
+
+.wall-feed-section {
+  flex-basis: 62%;
+}
+
+i.globe-icon {
+  background: $btn-background;
+  color: white;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+.panel-header {
+  display: flex;
+  padding-bottom: 7px;
+  margin: 8px 9px;
+  border-bottom: 1px solid $btn-border-grey;
+}
+
+.panel-title {
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.info-item {
+  margin: 10px 12px;
+}

@@ -22,26 +22,26 @@ export default class NavigationBar extends React.Component {
       <div className='signed-in-nav'>
         <div className='active-section'>
           <div>
-            <i className='fa fa-facebook-official icon-normal' aria-hidden="true"></i>
+            <i className='fa fa-facebook-official icon-normal' aria-hidden="true" />
           </div>
           <div className='nav-section-right'>
             <div>
               <Link to='/' className='home-btn' replace>Home</Link>
             </div>
             <div>
-              <i className="fa fa-users icon-small" aria-hidden="true"></i>
+              <i className="fa fa-users icon-small" aria-hidden="true" />
             </div>
             <div>
-              <i className="fa fa-commenting icon-small" aria-hidden="true"></i>
+              <i className="fa fa-commenting icon-small" aria-hidden="true" />
             </div>
             <div>
-              <i className="fa fa-globe icon-small" aria-hidden="true"></i>
+              <i className="fa fa-globe icon-small" aria-hidden="true" />
             </div>
             <div className='pipe'>
               |
             </div>
             <div>
-              <i className='fa fa-question-circle icon-small' aria-hidden="true"></i>
+              <i className='fa fa-question-circle icon-small' aria-hidden="true" />
             </div>
             <div className='menu-section'>
               <div>

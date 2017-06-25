@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileContainer from './profile_container';
 import ProfileNavigationContainer from './profile_navigation_container';
 import ProfileAboutContainer from './profile_about_container';
+import TimelineSection from './timeline_section';
 
 export default class DetailPage extends React.Component {
   constructor(props) {
@@ -18,7 +19,8 @@ export default class DetailPage extends React.Component {
           <ProfileNavigationContainer />
         </div>
         <div>
-          { (this.props.location.pathname.split('/')[3] === 'about') ? <ProfileAboutContainer /> : null }
+          { (this.props.location.pathname.split('/')[3] === 'about') ?
+            <ProfileAboutContainer /> : <TimelineSection /> }
         </div>
       </div>
     );

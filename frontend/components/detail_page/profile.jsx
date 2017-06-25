@@ -30,7 +30,7 @@ export default class Profile extends React.Component {
           <Link to ={ '/profile/' + this.props.userId + '/about' }
             className='edit-profile-btn'
             replace>
-              <i className="fa fa-pencil edit-icon" aria-hidden="true"></i>
+              <i className="fa fa-pencil edit-icon" aria-hidden="true" />
               Edit Profile
           </Link>
         </div>
