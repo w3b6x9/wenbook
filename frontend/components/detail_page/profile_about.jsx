@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NameFormContainer from './name_form_container';
 import EmailFormContainer from './email_form_container';
+import GenderFormContainer from './gender_form_container';
 
 export default class ProfileAbout extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class ProfileAbout extends React.Component {
     this.state = {
       showNameForm: false,
       showEmailForm: false,
+      showGenderForm: false,
     };
   }
 
@@ -57,6 +59,13 @@ export default class ProfileAbout extends React.Component {
             </div>
             <div className='about-item'>
               { gender }
+              { id === this.props.currentUser.id ?
+                this.state.showGenderForm ? <GenderFormContainer /> :
+                  <Link to={this.props.location.pathname}
+                    onClick={this.formClicked('showGenderForm')}
+                      replace>Edit your gender</Link> :
+                        null
+              }
             </div>
             <div className='about-item'>
               { birth_month + '/' + birth_day + '/' + birth_year }
