@@ -61,7 +61,7 @@
   flex-direction: column;
   width: 851px;
   margin: 25px auto;
-  border: 1px solid $error;
+  border: 1px solid $btn-border-grey;
 }
 
 .about-subsection {
@@ -69,21 +69,46 @@
 }
 
 .about-tab {
-  border: 1px solid blue;
   flex-basis: 30%;
   background: white;
   min-height: 400px;
+  border-right: 1px solid $btn-border-grey;
+  padding: 12px 4px 12px 16px;
 }
 
 .about-main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 1px solid black;
   flex-basis: 70%;
   background: white;
   min-height: 400px;
+  padding: 20px 24px;
 }
 
 .about-item {
+}
+
+.about-header {
+  color: #4b4f56;
+  height: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  background: #f6f7f9;
+  padding: 15px;
+  border-bottom: 1px solid $btn-border-grey;
+}
+
+i.user-icon {
+  color: grey;
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.about-header-subsection {
+  margin: 10px 0 0 10px;
+}
+
+.selected-about-tab {
+  border-left: 3px solid #365899;
 }

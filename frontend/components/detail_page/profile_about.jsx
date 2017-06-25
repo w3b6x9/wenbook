@@ -30,13 +30,17 @@ export default class ProfileAbout extends React.Component {
   render() {
     const { first_name, last_name, email, gender, birth_year,
       birth_month, birth_day, id } = this.props.user;
+    const { pathname } = this.props.location;
 
     return (
       <div className='about-section'>
-        <h3>About</h3>
+        <div className='about-header'>
+          <i className="fa fa-user user-icon" aria-hidden="true"></i>
+          <Link to={pathname} replace>About</Link>
+        </div>
         <div className='about-subsection'>
           <div className='about-tab'>
-            <Link to={this.props.location.pathname} replace>Overview</Link>
+            <Link to={pathname} replace>Overview</Link>
           </div>
           <div className='about-main'>
             <div className='about-item'>
