@@ -1,22 +1,25 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { updateSingleUser } from '../../actions/user_actions';
-import ProfileAbout from './profile_about';
+import {
+  updateSingleUser,
+  requestSingleUser,
+} from '../../actions/user_actions';
+import NameForm from './name_form';
 
-const mapStateToProps = ({user, session}) => {
+const mapStateToProps = ({user}) => {
   return {
     user,
-    currentUser: session.currentUser,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     updateSingleUser: user => dispatch(updateSingleUser(user)),
+    requestSingleUser: userId => dispatch(requestSingleUser(userId)),
   };
 };
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfileAbout));
+)(NameForm));
