@@ -87,6 +87,8 @@
 }
 
 .about-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .about-header {
