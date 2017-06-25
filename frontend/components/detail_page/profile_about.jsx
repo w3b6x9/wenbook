@@ -36,7 +36,9 @@ export default class ProfileAbout extends React.Component {
           <div className='about-main'>
             <div className='about-item'>
               { first_name + ' ' + last_name }
-              { this.state.showNameForm ? <NameFormContainer /> : <Link to={this.props.location.pathname} onClick={this.nameFormClicked}>Edit</Link> }
+              { this.state.showNameForm ? <NameFormContainer /> :
+                <Link to={this.props.location.pathname}
+                  onClick={this.nameFormClicked} replace>Edit</Link> }
             </div>
             <div className='about-item'>
               { email }
