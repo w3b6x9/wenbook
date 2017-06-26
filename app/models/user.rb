@@ -19,6 +19,31 @@ class User < ApplicationRecord
   has_attached_file :cover_picture
   validates_attachment_content_type :cover_picture, content_type: /\Aimage\/.*\z/
 
+  has_many :confirmed_received_friendships,
+    -> { where(status: :confirmed) },
+    class_name: "Friendship",
+    foreign_key: :receiver_id
+
+  has_many :pending_received_friendships,
+    -> { where(status: :pending) },
+    class_name: "Friendship",
+    foreign_key: :receiver_id
+
+  has_many :confirmed_sent_friendships,
+    -> { where(status: :confirmed) },
+    class_name: "Friendship",
+    foreign_key: :sender_id
+
+  has_many :pending_sent_friendships,
+    -> { where(status: :pending) },
+    class_name: "Friendship",
+    foreign_key: :sender_id
+
+  has_many :denied_sent_friendships,
+    -> { where(status: :denied) },
+    class_name: "Friendship",
+    foreign_key: :sender_id
+
   attr_reader :password
 
   after_initialize :ensure_session_token
@@ -26,6 +51,10 @@ class User < ApplicationRecord
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
+  end
+
+  def confirmed_friends
+    confirmed_received_friendships + confirmed_sent_friendships
   end
 
   def password=(password)
