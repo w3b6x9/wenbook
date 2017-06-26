@@ -16,18 +16,29 @@ export default class Profile extends React.Component {
     }
   }
 
+  handleFileSubmit(property) {
+    const userId = this.props.user.id;
+    const imageData = new FormData();
+
+    return e => {
+      imageData.append(`user[${property}]`, e.currentTarget.files[0]);
+      return this.props.updateSingleUserImage(userId, imageData);
+    };
+  }
+
   render() {
-    const { user } = this.props;
+    const { user, userId } = this.props;
     const fullName = user.first_name + ' ' + user.last_name;
 
     return (
       <div className='cover-info'>
         <div>
-          <img src='https://theamericangenius.com/wp-content/uploads/2012/11/facebook-cover-photo-8.jpg'
+          <img src={user.cover_picture}
             height='204px'
             width='851px'
           />
-          <Link to ={ '/profile/' + this.props.userId + '/about' }
+        <input type='file' onChange={this.handleFileSubmit('cover_picture')} />
+          <Link to ={ '/profile/' + userId + '/about' }
             className='edit-profile-btn'
             replace>
               <i className="fa fa-pencil edit-icon" aria-hidden="true" />
@@ -35,10 +46,11 @@ export default class Profile extends React.Component {
           </Link>
         </div>
         <div className='profile-pic'>
-          <img src='http://2.bp.blogspot.com/-EsajbcKAL4M/VDKae30gL4I/AAAAAAAAAAo/7f--9cnz2Ws/s1600/headshot-panda.jpg'
+          <img src={user.profile_picture}
             height='168px'
             width='168px'
           />
+        <input type='file' onChange={this.handleFileSubmit('profile_picture')} />
         </div>
         <div className='cover-full-name'>
           {fullName}

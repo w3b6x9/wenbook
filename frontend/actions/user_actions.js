@@ -17,3 +17,8 @@ export const updateSingleUser = user => dispatch => {
   return APIUtil.updateSingleUser(user)
     .then(user => dispatch(receiveSingleUser(user)));
 };
+
+export const updateSingleUserImage = (userId, imageData) => dispatch => {
+  return APIUtil.updateSingleUserImage(userId, imageData)
+    .then(user => dispatch(receiveSingleUser(user)));
+};

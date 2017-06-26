@@ -41,7 +41,9 @@ class Api::UsersController < ApplicationController
       :birth_month,
       :birth_day,
       :birth_year,
-      :gender
+      :gender,
+      :cover_picture,
+      :profile_picture
     )
   end
 end
