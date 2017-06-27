@@ -156,7 +156,6 @@ i.gender-icon {
 .info-panel {
   display: flex;
   flex-direction: column;
-  flex-basis: 36%;
   width: 321px;
   height: 165px;
   margin-right: 2%;
@@ -173,27 +172,81 @@ i.gender-icon {
   flex-basis: 62%;
 }
 
-i.globe-icon {
-  background: $btn-background;
+i.header-icon {
   color: white;
   padding: 5px;
   margin: 3px;
   border-radius: 50%;
+}
+
+i.globe {
+  background: $btn-background;
   font-size: 17px;
 }
 
-.panel-header {
+i.friends {
+  background: #e91e63;
+  font-size: 15px;
+}
+
+.info-header {
   display: flex;
   padding-bottom: 7px;
-  margin: 8px 9px;
   border-bottom: 1px solid $btn-border-grey;
+  margin: 8px 9px 5px 9px;
+}
+
+.friends-header {
+  display: flex;
+  padding-bottom: 4px;
+  margin: 8px 9px 5px 9px;
 }
 
 .panel-title {
   font-size: 18px;
-  margin-top: 4px;
+  margin: 4px 0 0 5px;
 }
 
 .info-item {
   margin: 10px 12px;
+}
+
+.friends-panel {
+  width: 321px;
+  height: 365px;
+  margin: 20px 0 0 0;
+  background: white;
+}
+
+.panel {
+  display: flex;
+  flex-basis: 36%;
+  flex-direction: column;
+}
+
+.friends-block {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 5px;
+}
+
+.friend-picture {
+  position: relative;
+  width: 95px;
+  height: 95px;
+}
+
+.friend-name {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: 56px 0 0 6px;
+  font-size: 12px;
+  color: black;
+}
+
+.friend-square {
+  display: flex;
+  margin: 0 0 7px 7px;
 }

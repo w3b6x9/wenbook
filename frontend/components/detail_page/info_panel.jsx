@@ -7,8 +7,10 @@ export default class InfoPanel extends React.Component {
 
     return (
       <div>
-        <div className='panel-header'>
-          <i className="fa fa-globe globe-icon" aria-hidden="true" />
+        <div className='info-header'>
+          <i className="fa fa-globe header-icon globe"
+            aria-hidden="true"
+          />
           <div className='panel-title'>
             Intro
           </div>
