@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:index, :create, :update, :destroy]
-    get "friends", to: "friendships#friends"
+    get "users/:id/friends", to: "friendships#friends", as: :friends
   end
 end

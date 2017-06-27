@@ -46,9 +46,9 @@ export const fetchPendingRequests = () => {
   });
 };
 
-export const fetchAllFriends = () => {
+export const fetchAllFriends = userId => {
   return $.ajax({
     method: 'GET',
-    url: `api/friends`,
+    url: `api/users/${userId}/friends`,
   });
 };

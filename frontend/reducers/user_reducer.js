@@ -14,7 +14,9 @@ const UserReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_USER:
       return merge({}, state, action.user);
     case RECEIVE_ALL_FRIENDS:
-      return merge({}, state, { friends: action.friends });
+      const dupState = merge({}, state);
+      dupState.friends = action.friends;
+      return dupState;
     default:
       return state;
   }

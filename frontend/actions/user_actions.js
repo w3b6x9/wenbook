@@ -32,7 +32,7 @@ export const updateSingleUserImage = (userId, imageData) => dispatch => {
     .then(user => dispatch(receiveSingleUser(user)));
 };
 
-export const fetchAllFriends = () => dispatch => {
-  return APIUtil.fetchAllFriends()
+export const fetchAllFriends = userId => dispatch => {
+  return APIUtil.fetchAllFriends(userId)
     .then(friends => dispatch(receiveAllFriends(friends)));
 };

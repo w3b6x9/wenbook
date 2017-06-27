@@ -31,7 +31,8 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def friends
-    @friendships = current_user.confirmed_friendships
+    @user = User.find(params[:id])
+    @friendships = @user.confirmed_friendships
     render :friends
   end
 

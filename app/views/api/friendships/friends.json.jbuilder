@@ -1,5 +1,5 @@
 @friendships.each do |friendship|
-  if friendship.sender == current_user
+  if friendship.sender == @user
     user = friendship.receiver
   else
     user = friendship.sender
