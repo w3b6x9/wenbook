@@ -12,7 +12,6 @@ export default class ProfileFriends extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.userId !== nextProps.userId) {
-      debugger
       this.props.fetchAllFriends(nextProps.userId);
     }
   }

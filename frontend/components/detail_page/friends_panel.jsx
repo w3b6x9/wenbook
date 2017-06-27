@@ -6,13 +6,11 @@ export default class FriendsPanel extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchAllFriends(this.props.userId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.userId !== nextProps.userId) {
-      debugger
       this.props.fetchAllFriends(nextProps.userId);
     }
   }
