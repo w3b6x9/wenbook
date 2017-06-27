@@ -25,6 +25,10 @@ export default class PendingRequests extends React.Component {
               'confirmed',
               request.friendship_id
             )}>Confirm</button>
+          <button onClick={this.handleClick(
+              'denied',
+              request.friendship_id
+            )}>Delete Request</button>
         </li>
       );
     });
