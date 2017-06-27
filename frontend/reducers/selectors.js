@@ -1,3 +1,9 @@
+import { values } from 'lodash';
+
+export const valuesArray = data => {
+  return values(data);
+};
+
 export const yearsRange = () => {
   const range = [];
 

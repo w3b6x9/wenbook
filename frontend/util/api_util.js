@@ -22,3 +22,26 @@ export const updateSingleUserImage = (userId, imageData) => {
     data: imageData,
   });
 };
+
+export const createFriendship = friendship => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/friendships',
+    data: { friendship },
+  });
+};
+
+export const updateFriendship = friendship => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/friendships/${friendship.friendship_id}`,
+    data: { friendship },
+  });
+};
+
+export const fetchPendingRequests = () => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/friendships`,
+  });
+};

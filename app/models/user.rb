@@ -53,7 +53,7 @@ class User < ApplicationRecord
     user && user.is_password?(password) ? user : nil
   end
 
-  def confirmed_friends
+  def confirmed_friendships
     confirmed_received_friendships + confirmed_sent_friendships
   end
 

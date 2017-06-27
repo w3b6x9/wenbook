@@ -5,6 +5,8 @@ import LandingPage from './landing_page/landing_page';
 import HomePage from './home_page/home_page';
 import DetailPage from './detail_page/detail_page';
 import NavigationBarContainer from './home_page/navigation_bar_container';
+import FriendshipRequestsContainer from
+  './friendship_request_page/friendship_requests_container';
 
 const App = props => {
   return (
@@ -13,6 +15,8 @@ const App = props => {
       <ProtectedRoute path='/' component={ NavigationBarContainer } />
       <ProtectedRoute exact={true} path='/' component={ HomePage } />
       <ProtectedRoute path='/profile/:userId' component={ DetailPage } />
+      <ProtectedRoute path='/friends/requests/'
+        component={ FriendshipRequestsContainer } />
     </div>
   );
 };
