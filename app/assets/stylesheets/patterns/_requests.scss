@@ -1,0 +1,76 @@
+.friend-requests-main {
+  min-height: 800px;
+  background: $background-grey;
+  padding: 1px;
+}
+
+.requests-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 665px;
+  margin: 22px auto 0 auto;
+  padding: 15px 0 0 0;
+}
+
+.request-list {
+  list-style: none;
+  margin: 0 10px 0 10px;
+  padding: 0 5px 0 5px;
+}
+
+.requests-header {
+  height: 40px;
+  border-bottom: 1px solid $background-grey;
+  font-weight: bolder;
+  padding: 5px 20px 0 20px;
+}
+
+li.request-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $background-grey;
+}
+
+li.request-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.info-left {
+  display: flex;
+}
+
+li.request-item img {
+  width: 75px;
+  height: 75px;
+}
+
+.user-name {
+  padding: 27px 0 0 7px;
+}
+
+.confirm-btn {
+  color: white;
+  background: $btn-background;
+  border: 1px solid $btn-background;
+}
+
+.delete-btn {
+  background: #f6f7f9;
+  border: 1px solid #ced0d4;
+}
+
+.btn {
+  font-size: 12px;
+  height: 25px;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 0 8px;
+}
+
+.action-btn {
+  padding-top: 24px;
+}
