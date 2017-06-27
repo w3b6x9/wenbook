@@ -51,7 +51,9 @@ export default class NavigationBar extends React.Component {
               </div>
             </div>
             <div>
-              <i className="fa fa-users icon-small" aria-hidden="true" />
+              <Link to='/friends/requests' replace>
+                <i className="fa fa-users icon-small" aria-hidden="true" />
+              </Link>
             </div>
             <div>
               <i className="fa fa-commenting icon-small" aria-hidden="true" />
