@@ -21,8 +21,14 @@ export default class NavigationBar extends React.Component {
     return (
       <div className='signed-in-nav'>
         <div className='active-section'>
-          <div>
+          <div className='nav-section-left'>
             <i className='fa fa-facebook-official icon-normal' aria-hidden="true" />
+            <input className='nav-search'
+              type='text'
+              placeholder='Search WenBook' />
+            <button className='search-btn'>
+              <i className="fa fa-search search-icon" aria-hidden="true" />
+            </button>
           </div>
           <div className='nav-section-right'>
             <div>

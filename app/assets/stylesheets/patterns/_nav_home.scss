@@ -32,6 +32,41 @@ i.icon-normal {
   padding-top: 3px;
 }
 
+.nav-section-left {
+  display: flex;
+}
+
+.nav-search {
+  height: 23px;
+  width: 380px;
+  margin: 3px 0 3px 7px;
+  padding-left: 8px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border: none;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.search-btn {
+  height: 25px;
+  width: 45px;
+  margin: 3px auto;
+  background: #f1f1f1;
+  border: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+input.nav-search::-webkit-input-placeholder {
+  color: #a8a8a8;
+}
+
+i.search-icon {
+  font-size: 15px;
+  color: #666666;
+}
+
 .active-section {
   display: flex;
   justify-content: space-around;
