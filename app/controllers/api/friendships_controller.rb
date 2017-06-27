@@ -30,6 +30,11 @@ class Api::FriendshipsController < ApplicationController
   def destroy
   end
 
+  def friends
+    @friendships = current_user.confirmed_friendships
+    render :friends
+  end
+
   private
 
   def friendship_params

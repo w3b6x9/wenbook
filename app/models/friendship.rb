@@ -1,4 +1,6 @@
 class Friendship < ApplicationRecord
+  validates_uniqueness_of :sender, scope: :receiver
+  
   belongs_to :sender,
     class_name: "User",
     foreign_key: :sender_id

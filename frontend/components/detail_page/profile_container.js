@@ -6,11 +6,12 @@ import {
 } from '../../actions/user_actions';
 import Profile from './profile';
 
-const mapStateToProps = ({user}, {match}) => {
+const mapStateToProps = ({user, friends}, {match}) => {
   const userId = parseInt(match.params.userId);
   return {
     user,
     userId,
+    friends,
   };
 };
 
