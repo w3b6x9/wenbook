@@ -1,10 +1,19 @@
 import * as APIUtil from '../util/api_util';
+
 export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
+export const RECEIVE_ALL_FRIENDS = 'RECEIVE_ALL_FRIENDS';
 
 export const receiveSingleUser = user => {
   return {
     type: RECEIVE_SINGLE_USER,
     user,
+  };
+};
+
+export const receiveAllFriends = friends => {
+  return {
+    type: RECEIVE_ALL_FRIENDS,
+    friends,
   };
 };
 
@@ -21,4 +30,9 @@ export const updateSingleUser = user => dispatch => {
 export const updateSingleUserImage = (userId, imageData) => dispatch => {
   return APIUtil.updateSingleUserImage(userId, imageData)
     .then(user => dispatch(receiveSingleUser(user)));
+};
+
+export const fetchAllFriends = () => dispatch => {
+  return APIUtil.fetchAllFriends()
+    .then(friends => dispatch(receiveAllFriends(friends)));
 };
