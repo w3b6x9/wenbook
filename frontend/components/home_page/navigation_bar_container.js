@@ -7,6 +7,7 @@ const mapStateToProps = state => {
   return {
     visible: Boolean(state.dropdown.menu),
     menu: MenuDropdownContainer,
+    currentUser: state.session.currentUser,
   };
 };
 

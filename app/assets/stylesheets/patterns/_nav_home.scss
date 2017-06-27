@@ -72,11 +72,17 @@ i.search-icon {
   justify-content: space-around;
   padding-top: 6px;
   margin: auto;
+  width: 1300px;
 }
 
 .menu-section {
   display: flex;
   flex-direction: column;
+}
+
+.pipe-mid {
+  color: #1D2951;
+  margin-left: 8px;
 }
 
 .pipe {
@@ -87,4 +93,29 @@ i.search-icon {
 .home-btn {
   text-decoration: none;
   color: white;
+  font-size: 13px;
+  margin: 0 20px 0 8px;
+}
+
+.nav-user-name {
+  color: white;
+  font-size: 13px;
+  padding-top: 3px;
+  margin-left: 7px;
+}
+
+.nav-pic {
+  height: 25px;
+  width: 25px;
+  border: none;
+  border-radius: 3px;
+}
+
+.nav-right-mid {
+  display: flex;
+}
+
+.nav-profile-link {
+  display: flex;
+  text-decoration: none;
 }

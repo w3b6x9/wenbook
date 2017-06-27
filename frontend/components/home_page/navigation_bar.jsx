@@ -18,6 +18,8 @@ export default class NavigationBar extends React.Component {
   }
 
   render() {
+    const { first_name, profile_picture, id } = this.props.currentUser;
+
     return (
       <div className='signed-in-nav'>
         <div className='active-section'>
@@ -31,8 +33,22 @@ export default class NavigationBar extends React.Component {
             </button>
           </div>
           <div className='nav-section-right'>
-            <div>
-              <Link to='/' className='home-btn' replace>Home</Link>
+            <div className='nav-right-mid'>
+              <Link to={ '/profile/' + id }
+                className='nav-profile-link'
+                replace
+              >
+                <img className='nav-pic' src={ profile_picture } />
+                <div className='nav-user-name'>
+                  { first_name }
+                </div>
+              </Link>
+              <div className='pipe-mid'>
+                |
+              </div>
+              <div>
+                <Link to='/' className='home-btn' replace>Home</Link>
+              </div>
             </div>
             <div>
               <i className="fa fa-users icon-small" aria-hidden="true" />
