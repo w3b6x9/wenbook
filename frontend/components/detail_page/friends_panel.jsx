@@ -26,7 +26,7 @@ export default class FriendsPanel extends React.Component {
             <div>{ last_name }</div>
           </div>
         </li>
-      )
+      );
     });
 
     return (
