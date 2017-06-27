@@ -7,7 +7,14 @@ export default class ProfileFriends extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllFriends();
+    this.props.fetchAllFriends(this.props.userId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.userId !== nextProps.userId) {
+      debugger
+      this.props.fetchAllFriends(nextProps.userId);
+    }
   }
 
   render() {
