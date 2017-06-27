@@ -230,7 +230,7 @@ i.friends {
 
 .friends-panel {
   width: 321px;
-  height: 365px;
+  min-height: 0;
   margin: 20px 0 0 0;
   background: white;
 }
