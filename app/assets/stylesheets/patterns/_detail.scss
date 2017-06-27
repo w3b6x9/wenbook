@@ -1,7 +1,7 @@
 .detail-body {
   display: flex;
   flex-direction: column;
-  min-height: 800px;
+  min-height: 1000px;
   background: $background-grey;
 }
 
@@ -32,6 +32,11 @@
   top: auto;
   margin-top: 150px;
   margin-left: 210px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .profile-pic {
@@ -44,6 +49,18 @@
   margin-left: 20px;
   border: 3.5px solid white;
   border-radius: 3px;
+}
+
+.profile-pic-inner {
+  height: 168px;
+  width: 168px;
+  object-fit: cover;
+}
+
+.cover-pic {
+  height: 204px;
+  width: 851px;
+  object-fit: fill;
 }
 
 .profile-navbar-tabs {

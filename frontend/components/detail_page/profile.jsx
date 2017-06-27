@@ -33,7 +33,7 @@ export default class Profile extends React.Component {
     return (
       <div className='cover-info'>
         <div>
-          <img src={user.cover_picture}
+          <img src={user.cover_picture} className='cover-pic'
             height='204px'
             width='851px'
           />
@@ -47,8 +47,7 @@ export default class Profile extends React.Component {
         </div>
         <div className='profile-pic'>
           <img src={user.profile_picture}
-            height='168px'
-            width='168px'
+            className='profile-pic-inner'
           />
         <input type='file' onChange={this.handleFileSubmit('profile_picture')} />
         </div>
