@@ -52,3 +52,11 @@ export const fetchAllFriends = userId => {
     url: `api/users/${userId}/friends`,
   });
 };
+
+export const createPost = post => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/posts',
+    data: { post },
+  });
+};

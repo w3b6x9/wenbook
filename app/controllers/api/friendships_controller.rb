@@ -1,8 +1,4 @@
 class Api::FriendshipsController < ApplicationController
-  def index
-    @friendships = Friendship.all
-  end
-
   def create
     @friendship = Friendship.new(
       sender_id: current_user.id,
