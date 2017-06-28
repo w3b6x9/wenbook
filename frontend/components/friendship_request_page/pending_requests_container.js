@@ -15,8 +15,8 @@ const mapStateToProps = ({friendship}) => {
 const mapDispatchToProps = dispatch => {
   return {
     requestPendingRequests: () => dispatch(requestPendingRequests()),
-    updatePendingRequest: friendship => dispatch(updatePendingRequest(
-      friendship)),
+    updatePendingRequest: friendship =>
+      dispatch(updatePendingRequest(friendship)),
   };
 };
 

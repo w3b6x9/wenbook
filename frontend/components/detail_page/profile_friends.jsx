@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 export default class ProfileFriends extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -14,6 +16,18 @@ export default class ProfileFriends extends React.Component {
     if (this.props.userId !== nextProps.userId) {
       this.props.fetchAllFriends(nextProps.userId);
     }
+  }
+
+  handleClick(friendshipId) {
+    const friendship = {
+      status: 'deleted',
+      friendship_id: friendshipId,
+    };
+
+    return () => {
+      this.props.updatePendingRequest(friendship)
+        .then(() => this.props.fetchAllFriends(this.props.userId));
+    };
   }
 
   render() {
@@ -31,7 +45,8 @@ export default class ProfileFriends extends React.Component {
               </Link>
             </div>
           </div>
-          <button className='pro-friends-btn'>
+          <button className='pro-friends-btn'
+            onClick={ this.handleClick(friend.friendship_id) }>
             <i className="fa fa-check check-icon" aria-hidden="true" />
             Friends
           </button>

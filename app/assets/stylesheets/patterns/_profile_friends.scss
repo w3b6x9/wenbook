@@ -46,6 +46,7 @@
 
 .pro-friends-btn {
   display: flex;
+  cursor: pointer;
   color: #4b4f56;
   font-weight: bold;
   font-size: 12px;
@@ -55,6 +56,11 @@
   border: 1px solid #ced0d4;
   border-radius: 3px;
   margin: 38px 15px 0 0;
+}
+
+.pro-friends-btn:hover {
+  background: #FF1744;
+  color: white;
 }
 
 i.check-icon {
