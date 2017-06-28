@@ -1,11 +1,85 @@
 .wall-feed-container {
   display: flex;
-  flex-basis: 64%;
+  flex-basis: 65%;
   flex-direction: column;
 }
 
-// .panel {
-//   display: flex;
-//   flex-basis: 36%;
-//   flex-direction: column;
-// }
+.post-form {
+  width: 518px;
+  margin: 0 0 0 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.post-input {
+  width: 450px;
+  height: 56px;
+  border: none;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  display: flex;
+  height: 35px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #f6f7f9;
+}
+
+textarea {
+  resize: none;
+}
+
+i.pencil-icon {
+  font-size: 19px;
+  margin: 8px 6px 0 10px;
+}
+
+.post-title-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 7px;
+}
+
+.form-section {
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.author-pic {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+}
+
+.author-pic-section {
+  height: 60px;
+  width: 70px;
+  background: white;
+}
+
+.post-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  height: 45px;
+  background: white;
+}
+
+input.submit-btn {
+  height: 27px;
+  width: 62px;
+  margin: 8px 10px 0 0;
+  border-radius: 3px;
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  background: $btn-background;
+  border: $btn-background;
+}

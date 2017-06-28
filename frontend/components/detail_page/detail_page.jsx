@@ -4,7 +4,6 @@ import ProfileNavigationContainer from './profile_navigation_container';
 import ProfileAboutContainer from './profile_about_container';
 import TimelineSection from './timeline_section';
 import ProfileFriendsContainer from './profile_friends_container';
-import WallFeed from './wall_feed';
 
 export default class DetailPage extends React.Component {
   constructor(props) {
@@ -14,7 +13,6 @@ export default class DetailPage extends React.Component {
   render() {
     const path = this.props.location.pathname.split('/')[3];
     let component;
-    let wallPost = null;
 
     if (path === 'about') {
       component = (<ProfileAboutContainer />);
@@ -22,7 +20,6 @@ export default class DetailPage extends React.Component {
       component = (<ProfileFriendsContainer />);
     } else {
       component = (<TimelineSection />);
-      wallPost = (<WallFeed />);
     }
 
     return (
@@ -35,7 +32,6 @@ export default class DetailPage extends React.Component {
         </div>
         <div>
           { component }
-          { wallPost }
         </div>
       </div>
     );
