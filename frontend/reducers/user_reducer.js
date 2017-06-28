@@ -2,8 +2,8 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_SINGLE_USER,
   RECEIVE_ALL_FRIENDS,
-  RECEIVE_WALL_POST,
 } from '../actions/user_actions';
+import { RECEIVE_WALL_POSTS } from '../actions/post_actions';
 
 const defaultState = Object.freeze({
   friends: {},
@@ -16,15 +16,19 @@ const UserReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_USER:
       return merge({}, state, action.user);
     case RECEIVE_ALL_FRIENDS:
-      const dupState = merge({}, state);
-      dupState.friends = action.friends;
-      return dupState;
-    case RECEIVE_WALL_POST:
-      return merge(
-        {},
-        state,
-        { posts: { [action.post.id]: action.post } }
-      );
+      const friendDupState = merge({}, state);
+      friendDupState.friends = action.friends;
+      return friendDupState;
+    // case RECEIVE_WALL_POST:
+    //   return merge(
+    //     {},
+    //     state,
+    //     { posts: { [action.post.id]: action.post } }
+    //   );
+    case RECEIVE_WALL_POSTS:
+      const wallPostDupState = merge({}, state);
+      wallPostDupState.posts = action.posts;
+      return wallPostDupState;
     default:
       return state;
   }

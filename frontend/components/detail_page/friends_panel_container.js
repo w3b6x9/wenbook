@@ -5,7 +5,7 @@ import FriendsPanel from './friends_panel';
 import { valuesArray } from '../../reducers/selectors';
 
 const mapStateToProps = ({user}, {match}) => {
-  const userId = match.params.userId;
+  const userId = parseInt(match.params.userId);
 
   return {
     friends: valuesArray(user.friends),

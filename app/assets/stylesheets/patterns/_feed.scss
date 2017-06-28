@@ -83,3 +83,44 @@ input.submit-btn {
   background: $btn-background;
   border: $btn-background;
 }
+
+.feed-section {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0 0 0 10px;
+}
+
+.feed-item {
+  display: flex;
+  flex-direction: column;
+  width: 518px;
+  background: white;
+  margin: 20px 0 0 0;
+  border: 1px solid #e5e5e5;
+  padding: 0 0 15px 0;
+}
+
+.feed-item-body {
+  display: flex;
+}
+
+.feed-item-info {
+  display: flex;
+  flex-direction: column;
+  margin: 11px 0 0 0;
+}
+
+.feed-user-name {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.feed-time-ago {
+  font-size: 13px;
+}
+
+.feed-body {
+  margin: 0 10px;
+  min-height: 25px;
+}

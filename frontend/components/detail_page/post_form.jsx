@@ -36,7 +36,7 @@ export default class Postform extends React.Component {
           </div>
           <div className='form-section'>
             <div className='author-pic-section'>
-              <div className='author_pic'>
+              <div>
                 <img src={ profile_picture } className='author-pic' />
               </div>
             </div>

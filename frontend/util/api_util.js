@@ -60,3 +60,10 @@ export const createPost = post => {
     data: { post },
   });
 };
+
+export const fetchWallPosts = (userId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}/wallfeed`,
+  });
+};

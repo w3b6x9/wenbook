@@ -20,6 +20,10 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def wallfeed
+    @wall_feed_posts = User.find(params[:id]).try(:wall_feed_posts)
+  end
+
   private
 
   def post_params

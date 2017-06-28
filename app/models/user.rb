@@ -26,23 +26,28 @@ class User < ApplicationRecord
 
   has_many :pending_received_friendships,
     -> { where(status: :pending) },
-    class_name: "Friendship",
+    class_name: :Friendship,
     foreign_key: :receiver_id
 
   has_many :confirmed_sent_friendships,
     -> { where(status: :confirmed) },
-    class_name: "Friendship",
+    class_name: :Friendship,
     foreign_key: :sender_id
 
   has_many :pending_sent_friendships,
     -> { where(status: :pending) },
-    class_name: "Friendship",
+    class_name: :Friendship,
     foreign_key: :sender_id
 
   has_many :denied_sent_friendships,
     -> { where(status: :denied) },
-    class_name: "Friendship",
+    class_name: :Friendship,
     foreign_key: :sender_id
+
+  has_many :wall_feed_posts,
+    -> { order(created_at: :desc) },
+    class_name: :Post,
+    foreign_key: :receiver_id
 
   attr_reader :password
 

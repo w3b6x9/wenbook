@@ -1,24 +1,25 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createWallPost } from '../../actions/post_actions';
-import PostForm from './post_form';
+import { fetchWallPosts } from '../../actions/post_actions';
+import { valuesArray } from '../../reducers/selectors';
+import Feed from './feed';
 
-const mapStateToProps = ({session}, {match}) => {
+const mapStateToProps = ({user}, {match}) => {
   const receiverId = parseInt(match.params.userId);
 
   return {
-    currentUser: session.currentUser,
+    posts: valuesArray(user.posts),
     receiverId,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    createWallPost: post => dispatch(createWallPost(post)),
+    fetchPosts: userId => dispatch(fetchWallPosts(userId)),
   };
 };
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostForm));
+)(Feed));
