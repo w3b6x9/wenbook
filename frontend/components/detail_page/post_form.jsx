@@ -51,7 +51,7 @@ export default class Postform extends React.Component {
           <div className='post-form-footer'>
             <input type='submit'
               className='submit-btn'
-              onClick={ this.handleSubmit } 
+              onClick={ this.handleSubmit }
               value='Post' />
           </div>
         </div>
