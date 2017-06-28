@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/api_util';
 
-export const RECEIVE_WALL_POST = 'RECEIVE_SINGLE_POST';
+export const RECEIVE_WALL_POST = 'RECEIVE_WALL_POST';
 
 export const receiveWallPost = post => {
   return {
