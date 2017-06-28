@@ -3,7 +3,10 @@ import {
   RECEIVE_SINGLE_USER,
   RECEIVE_ALL_FRIENDS,
 } from '../actions/user_actions';
-import { RECEIVE_WALL_POSTS } from '../actions/post_actions';
+import {
+  RECEIVE_WALL_POST,
+  RECEIVE_WALL_POSTS,
+} from '../actions/post_actions';
 
 const defaultState = Object.freeze({
   friends: {},
@@ -19,12 +22,12 @@ const UserReducer = (state = defaultState, action) => {
       const friendDupState = merge({}, state);
       friendDupState.friends = action.friends;
       return friendDupState;
-    // case RECEIVE_WALL_POST:
-    //   return merge(
-    //     {},
-    //     state,
-    //     { posts: { [action.post.id]: action.post } }
-    //   );
+    case RECEIVE_WALL_POST:
+      return merge(
+        {},
+        state,
+        { posts: action.post }
+      );
     case RECEIVE_WALL_POSTS:
       const wallPostDupState = merge({}, state);
       wallPostDupState.posts = action.posts;

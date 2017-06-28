@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
     @post.author = current_user
 
     if @post.save
-      render json: {}
+      render :feed_item
     else
       render json: @post.errors.full_messages, status: 422
     end
