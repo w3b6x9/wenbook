@@ -82,3 +82,10 @@ export const fetchNewsPosts = userId => {
     url: `api/users/${userId}/newsfeed`,
   });
 };
+
+export const fetchSentRequests = () => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/friendships/sent_requests',
+  });
+};

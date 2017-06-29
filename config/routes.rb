@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:show, :create, :update]
     end
     get "users/:id/friends", to: "friendships#friends", as: :friends
+    get "friendships/sent_requests", to: "friendships#sent_requests", as: :sent_requests
     get "users/:id/wallfeed", to: "posts#wallfeed", as: :wallfeed
     get "users/:id/newsfeed", to: "posts#newsfeed", as: :newsfeed
   end

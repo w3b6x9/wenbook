@@ -32,6 +32,10 @@ class Api::FriendshipsController < ApplicationController
     render :friends
   end
 
+  def sent_requests
+    @sent_requests = current_user.pending_sent_friendships
+  end
+
   private
 
   def friendship_params

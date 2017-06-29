@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import EditProfileButton from './edit_profile_button';
+import RequestRespondButton from './request_respond_button';
+import RequestSendButton from './request_send_button';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -8,6 +11,8 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     this.props.requestSingleUser(this.props.userId);
+    this.props.fetchSentRequests();
+    this.props.requestPendingRequests();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,6 +31,44 @@ export default class Profile extends React.Component {
     };
   }
 
+  buttonAction() {
+    const {
+      user,
+      userId,
+      currentUserId,
+      receivedRequests,
+      sentRequests,
+    } = this.props;
+    let receivedRequest = false;
+    let sentRequest = false;
+
+    for (let i=0; i < receivedRequests.length; i++) {
+      if (receivedRequests[i].id === userId) {
+        receivedRequest = true;
+      }
+    }
+
+    for (let i=0; i < sentRequests.length; i++) {
+      if (sentRequests[i].receiver_id === userId) {
+        sentRequest = true;
+      }
+    }
+
+    if (userId === currentUserId) {
+      return (
+        <EditProfileButton userId={userId} />
+      );
+    } else if (receivedRequest) {
+      return (
+        <RequestRespondButton userId={userId} />
+      );
+    } else if (sentRequest) {
+      return (
+        <RequestSendButton userId={userId} />
+      );
+    }
+  }
+
   render() {
     const { user, userId } = this.props;
     const fullName = user.first_name + ' ' + user.last_name;
@@ -37,13 +80,8 @@ export default class Profile extends React.Component {
             height='204px'
             width='851px'
           />
-        <input type='file' onChange={this.handleFileSubmit('cover_picture')} />
-          <Link to ={ '/profile/' + userId + '/about' }
-            className='edit-profile-btn'
-            replace>
-              <i className="fa fa-pencil edit-icon" aria-hidden="true" />
-              Edit Profile
-          </Link>
+          <input type='file' onChange={this.handleFileSubmit('cover_picture')} />
+          { this.buttonAction() }
         </div>
         <div className='profile-pic'>
           <img src={user.profile_picture}

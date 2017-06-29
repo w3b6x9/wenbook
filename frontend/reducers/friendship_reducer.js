@@ -2,10 +2,15 @@ import {
   CREATE_FRIENDSHIP,
   RECEIVE_PENDING_REQUESTS,
   REMOVE_ANSWERED_REQUEST,
+  RECEIVE_SENT_REQUESTS,
 } from '../actions/friendship_actions';
 import { merge } from 'lodash';
 
-const defaultState = Object.freeze({ receivedRequests: {} });
+const defaultState = Object.freeze({
+  receivedRequests: {},
+  sentRequests: {},
+  deniedRequests: {},
+ });
 
 const FriendshipReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -15,6 +20,12 @@ const FriendshipReducer = (state = defaultState, action) => {
         {},
         state,
         { receivedRequests: friendships }
+      );
+    case RECEIVE_SENT_REQUESTS:
+      return merge(
+        {},
+        state,
+        { sentRequests: action.requests }
       );
     case REMOVE_ANSWERED_REQUEST:
       const currentState = merge(
