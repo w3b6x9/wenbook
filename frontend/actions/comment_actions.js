@@ -1,7 +1,6 @@
 import * as APIUtil from '../util/api_util';
 
 export const RECEIVE_SINGLE_COMMENT = 'RECEIVE_SINGLE_COMMENT';
-export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
 
 export const receiveSingleComment = comment => {
   return {

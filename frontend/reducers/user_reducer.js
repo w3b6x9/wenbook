@@ -11,9 +11,7 @@ import { RECEIVE_SINGLE_COMMENT } from '../actions/comment_actions';
 
 const defaultState = Object.freeze({
   friends: {},
-  posts: {
-    comments: {},
-  },
+  posts: {},
 });
 
 const UserReducer = (state = defaultState, action) => {
@@ -39,7 +37,14 @@ const UserReducer = (state = defaultState, action) => {
       return merge(
         {},
         state,
-        { posts: { comments: action.comment } }
+        { posts: {
+          [action.comment.commentable_id]: {
+            comments: {
+              [action.comment.id]: action.comment
+            }
+          }
+        }
+      }
       );
     default:
       return state;

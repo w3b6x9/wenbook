@@ -1,4 +1,8 @@
 class Api::CommentsController < ApplicationController
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
   def create
     @post = Post.find(params[:post_id])
 
@@ -7,7 +11,7 @@ class Api::CommentsController < ApplicationController
       @comment.author = current_user
 
       if @comment.save
-        render json: {}
+        render :show
       else
         render json: @comment.errors.full_messages, status: 422
       end
