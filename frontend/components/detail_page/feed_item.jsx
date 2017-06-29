@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { valuesArray } from '../../reducers/selectors';
 import Comment from './comment';
+import WallCommentFormContainer from './wall_comment_form_container';
 
 export default class FeedItem extends React.Component {
   comments() {
@@ -10,6 +11,7 @@ export default class FeedItem extends React.Component {
 
   render() {
     const {
+      id,
       author_id,
       author_profile_picture,
       author_first_name,
@@ -39,6 +41,7 @@ export default class FeedItem extends React.Component {
         </div>
         <ul className='comment-section'>
           { comments }
+          <WallCommentFormContainer postId={ id } />
         </ul>
       </li>
     );
