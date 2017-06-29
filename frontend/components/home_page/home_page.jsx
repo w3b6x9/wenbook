@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileButton from './profile_button';
+import FeedPostFormContainer from '../detail_page/feed_post_form_container';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class HomePage extends React.Component {
       <div className='home-body'>
         <div className='home-section-left' >
           <ProfileButton currentUser={ this.props.currentUser } />
-          <div>News Feed</div>
+          <FeedPostFormContainer />
         </div>
       </div>
     );

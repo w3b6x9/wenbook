@@ -4,7 +4,8 @@ import { createWallPost } from '../../actions/post_actions';
 import PostForm from './post_form';
 
 const mapStateToProps = ({session}, {match}) => {
-  const receiverId = parseInt(match.params.userId);
+  const pathId = parseInt(match.params.userId);
+  const receiverId = isNaN(pathId) ? '' : pathId;
 
   return {
     currentUser: session.currentUser,
