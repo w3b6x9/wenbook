@@ -37,14 +37,15 @@ const UserReducer = (state = defaultState, action) => {
       return merge(
         {},
         state,
-        { posts: {
-          [action.comment.commentable_id]: {
-            comments: {
-              [action.comment.id]: action.comment
+        {
+          posts: {
+            [action.comment.commentable_id]: {
+              comments: {
+                [action.comment.id]: action.comment
+              }
             }
           }
         }
-      }
       );
     default:
       return state;

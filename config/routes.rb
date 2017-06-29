@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     end
     get "users/:id/friends", to: "friendships#friends", as: :friends
     get "users/:id/wallfeed", to: "posts#wallfeed", as: :wallfeed
+    get "users/:id/newsfeed", to: "posts#newsfeed", as: :newsfeed
   end
 end

@@ -24,6 +24,10 @@ class Api::PostsController < ApplicationController
     @wall_feed_posts = User.find(params[:id]).try(:wall_feed_posts)
   end
 
+  def newsfeed
+    @news_feed_posts = User.find(params[:id]).try(:news_feed_posts)
+  end
+
   private
 
   def post_params

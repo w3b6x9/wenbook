@@ -61,7 +61,7 @@ export const createPost = post => {
   });
 };
 
-export const fetchWallPosts = (userId) => {
+export const fetchWallPosts = userId => {
   return $.ajax({
     method: 'GET',
     url: `api/users/${userId}/wallfeed`,
@@ -73,5 +73,12 @@ export const createComment = (postId, comment) => {
     method: 'POST',
     url: `api/posts/${postId}/comments`,
     data: { comment },
+  });
+};
+
+export const fetchNewsPosts = userId => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}/newsfeed`,
   });
 };

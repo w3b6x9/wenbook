@@ -49,6 +49,10 @@ class User < ApplicationRecord
     class_name: :Post,
     foreign_key: :receiver_id
 
+  has_many :authored_posts,
+    class_name: :Post,
+    foreign_key: :author_id
+
   has_many :comments,
     class_name: :Comment,
     foreign_key: :author_id
@@ -64,6 +68,17 @@ class User < ApplicationRecord
 
   def confirmed_friendships
     confirmed_received_friendships + confirmed_sent_friendships
+  end
+
+  def news_feed_posts
+    user_ids = Friendship
+      .where("(sender_id = ? AND status = 1) OR (receiver_id = ? AND status = 1)",
+        self.id, self.id)
+      .pluck(:sender_id, :receiver_id)
+      .flatten
+      .uniq
+
+    Post.where(author_id: user_ids).where(receiver_id: nil)
   end
 
   def password=(password)

@@ -2,7 +2,7 @@ import {
   CREATE_FRIENDSHIP,
   RECEIVE_PENDING_REQUESTS,
   REMOVE_ANSWERED_REQUEST,
-} from '../actions/friendship_actions.js';
+} from '../actions/friendship_actions';
 import { merge } from 'lodash';
 
 const defaultState = Object.freeze({ receivedRequests: {} });

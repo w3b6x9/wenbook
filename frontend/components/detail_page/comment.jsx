@@ -10,10 +10,11 @@ export default class Comment extends React.Component {
       author_profile_picture,
       time_ago,
       body,
+      id,
     } = this.props.comment;
 
     return(
-      <li>
+      <li key={ id }>
         <div className='comment-header'>
           <img src={ author_profile_picture } className='comment-pic' />
           <div>
@@ -32,6 +33,6 @@ export default class Comment extends React.Component {
           </div>
         </div>
       </li>
-    )
+    );
   }
 }
