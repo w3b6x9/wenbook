@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationBarContainer from './navigation_bar_container';
+import ProfileButton from './profile_button';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -8,8 +8,11 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>News Feed</h1>
+      <div className='home-body'>
+        <div className='home-section-left' >
+          <ProfileButton currentUser={ this.props.currentUser } />
+          <div>News Feed</div>
+        </div>
       </div>
     );
   }

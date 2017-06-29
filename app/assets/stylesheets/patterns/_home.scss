@@ -1,0 +1,35 @@
+.home-body {
+  display: flex;
+  justify-content: space-around;
+  min-height: 1000px;
+  background: $background-grey;
+}
+
+.panel-profile-link {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  width: 175px;
+  height: 20px;
+  padding: 3px;
+  border: 1px solid $error;
+}
+
+.panel-profile-pic {
+  width: 20px;
+  height: 20px;
+}
+
+.panel-profile-btn {
+  display: flex;
+}
+
+.home-section-left {
+  display: flex;
+  width: 700px;
+  border: 1px solid $error;
+}
+
+.panel-profile-name {
+  margin: 2px 0 0 2px;
+}
