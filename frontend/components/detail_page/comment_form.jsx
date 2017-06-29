@@ -25,11 +25,12 @@ export default class CommentForm extends React.Component {
     const { profile_picture } = this.props.currentUser;
 
     return (
-      <div>
+      <div className='comment-form-container'>
         <img src={ profile_picture } className='comment-pic' />
-        <form onKeyPress={ this.handleSubmit } className=''>
+        <form onKeyPress={ this.handleSubmit } className='comment-form'>
           <textarea
-            className=''
+            placeholder='Write a comment...'
+            className='comment-input'
             onChange={ this.handleChange }
             value={ this.state.body }
             />
