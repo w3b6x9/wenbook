@@ -67,3 +67,11 @@ export const fetchWallPosts = (userId) => {
     url: `api/users/${userId}/wallfeed`,
   });
 };
+
+export const createComment = (postId, comment) => {
+  return $.ajax({
+    method: 'POST',
+    url: `api/posts/${postId}/comments`,
+    data: { comment },
+  });
+};

@@ -98,7 +98,6 @@ input.submit-btn {
   background: white;
   margin: 20px 0 0 0;
   border: 1px solid #e5e5e5;
-  padding: 0 0 15px 0;
 }
 
 .feed-item-body {
@@ -123,4 +122,33 @@ input.submit-btn {
 .feed-body {
   margin: 0 10px;
   min-height: 25px;
+}
+
+.comment-section {
+  list-style: none;
+  border-top: 1px solid #e1e2e3;
+  background: #f6f7f9;
+}
+
+.comment-header {
+  display: flex;
+}
+
+.comment-pic {
+  width: 35px;
+  height: 35px;
+  margin: 10px 8px 10px 13px;
+}
+
+.comment-top-section {
+  display: flex;
+}
+
+.comment-name-link {
+  text-decoration: none;
+  margin: 11px 4px 0 0;
+}
+
+.comment-body {
+  margin: 11px 0 0 0;
 }

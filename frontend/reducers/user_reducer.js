@@ -7,10 +7,13 @@ import {
   RECEIVE_WALL_POST,
   RECEIVE_WALL_POSTS,
 } from '../actions/post_actions';
+import { RECEIVE_SINGLE_COMMENT } from '../actions/comment_actions';
 
 const defaultState = Object.freeze({
   friends: {},
-  posts: {},
+  posts: {
+    comments: {},
+  },
 });
 
 const UserReducer = (state = defaultState, action) => {
@@ -32,6 +35,12 @@ const UserReducer = (state = defaultState, action) => {
       const wallPostDupState = merge({}, state);
       wallPostDupState.posts = action.posts;
       return wallPostDupState;
+    case RECEIVE_SINGLE_COMMENT:
+      return merge(
+        {},
+        state,
+        { posts: { comments: action.comment } }
+      );
     default:
       return state;
   }

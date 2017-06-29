@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:index, :create, :update, :destroy]
-    resources :posts, only: [:create, :update]
+    resources :posts, only: [:create, :update] do
+      resources :comments, only: [:create, :update]
+    end
     get "users/:id/friends", to: "friendships#friends", as: :friends
     get "users/:id/wallfeed", to: "posts#wallfeed", as: :wallfeed
   end
