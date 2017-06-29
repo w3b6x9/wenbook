@@ -1,6 +1,6 @@
 .home-body {
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   min-height: 1000px;
   background: $background-grey;
 }
@@ -26,6 +26,8 @@
 .home-section-left {
   display: flex;
   width: 700px;
+  margin-left: 14.9%;
+  margin-top: 13px;
 }
 
 .panel-profile-name {
