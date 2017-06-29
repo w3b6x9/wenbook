@@ -4,6 +4,10 @@ export const valuesArray = data => {
   return values(data);
 };
 
+export const valuesArrayReverse = data => {
+  return values(data).reverse();
+};
+
 export const yearsRange = () => {
   const range = [];
 
