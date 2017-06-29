@@ -1,30 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NameFormContainer from './name_form_container';
-import EmailFormContainer from './email_form_container';
-import GenderFormContainer from './gender_form_container';
-import BirthdayFormContainer from './birthday_form_container';
+import ProfileAboutName from './profile_about_name';
+import ProfileAboutEmail from './profile_about_email';
+import ProfileAboutGender from './profile_about_gender';
+import ProfileAboutBirthday from './profile_about_birthday';
 
 export default class ProfileAbout extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      showNameForm: false,
-      showEmailForm: false,
-      showGenderForm: false,
-      showBirthdayForm: false,
-    };
-  }
-
-  formClicked(property) {
-    return () => {
-      if (this.state.property) {
-        this.setState({ [property]: false });
-      } else {
-        this.setState({ [property]: true });
-      }
-    };
   }
 
   render() {
@@ -44,44 +27,24 @@ export default class ProfileAbout extends React.Component {
           </div>
           <ul className='about-main'>
             <li className='about-item'>
-              { first_name + ' ' + last_name }
-              { id === this.props.currentUser.id ?
-                this.state.showNameForm ? <NameFormContainer /> :
-                  <Link to={this.props.location.pathname}
-                    onClick={this.formClicked('showNameForm')}
-                      replace>Edit your name</Link> :
-                        null
-              }
+              <ProfileAboutName currentUserId={this.props.currentUser.id}
+                user={this.props.user} pathName={this.props.location.pathname}
+                nameForm={this.props.nameForm} displayForm={this.props.displayForm} />
             </li>
             <li className='about-item'>
-              { email }
-              { id === this.props.currentUser.id ?
-                this.state.showEmailForm ? <EmailFormContainer /> :
-                  <Link to={this.props.location.pathname}
-                    onClick={this.formClicked('showEmailForm')}
-                      replace>Edit your email</Link> :
-                        null
-              }
+              <ProfileAboutEmail currentUserId={this.props.currentUser.id}
+                user={this.props.user} pathName={this.props.location.pathname}
+                emailForm={this.props.emailForm} displayForm={this.props.displayForm} />
             </li>
             <li className='about-item'>
-              { gender }
-              { id === this.props.currentUser.id ?
-                this.state.showGenderForm ? <GenderFormContainer /> :
-                  <Link to={this.props.location.pathname}
-                    onClick={this.formClicked('showGenderForm')}
-                      replace>Edit your gender</Link> :
-                        null
-              }
+              <ProfileAboutGender currentUserId={this.props.currentUser.id}
+                user={this.props.user} pathName={this.props.location.pathname}
+              genderForm={this.props.genderForm} displayForm={this.props.displayForm} />
             </li>
             <li className='about-item'>
-              { birth_month + '/' + birth_day + '/' + birth_year }
-              { id === this.props.currentUser.id ?
-                this.state.showBirthdayForm ? <BirthdayFormContainer /> :
-                  <Link to={this.props.location.pathname}
-                    onClick={this.formClicked('showBirthdayForm')}
-                      replace>Edit your birthday</Link> :
-                        null
-              }
+              <ProfileAboutBirthday currentUserId={this.props.currentUser.id}
+                user={this.props.user} pathName={this.props.location.pathname}
+              birthdayForm={this.props.birthdayForm} displayForm={this.props.displayForm} />
             </li>
           </ul>
         </div>

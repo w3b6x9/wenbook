@@ -1,0 +1,26 @@
+import React from 'react';
+import EmailFormContainer from './email_form_container';
+import { Link } from 'react-router-dom';
+
+const ProfileAboutEmail = props => {
+  const { id, email } = props.user;
+
+  if (id === props.currentUserId) {
+    if (props.emailForm) {
+      return (<EmailFormContainer />);
+    } else {
+      return (
+        <div>
+          { email }
+          <Link to={ props.pathName } onClick={props.displayForm('emailForm')}
+            replace>Edit your email
+          </Link>
+        </div>
+      );
+    }
+  } else {
+    return null;
+  }
+};
+
+export default ProfileAboutEmail;
