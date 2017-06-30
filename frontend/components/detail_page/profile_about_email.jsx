@@ -10,9 +10,11 @@ const ProfileAboutEmail = props => {
       return (<EmailFormContainer />);
     } else {
       return (
-        <div>
-          { email }
-          <Link to={ props.pathName } onClick={props.displayForm('emailForm')}
+        <div className='detail-about-list-item'>
+          <div>{ email }</div>
+          <Link to={ props.pathName }
+            className='detail-about-action'
+            onClick={props.displayForm('emailForm')}
             replace>Edit your email
           </Link>
         </div>

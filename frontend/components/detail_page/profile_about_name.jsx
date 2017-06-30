@@ -10,9 +10,11 @@ const ProfileAboutName = props => {
       return (<NameFormContainer />);
     } else {
       return (
-        <div>
-          { first_name + ' ' + last_name }
-          <Link to={ props.pathName } onClick={props.displayForm('nameForm')}
+        <div className='detail-about-list-item'>
+          <div>{ first_name + ' ' + last_name }</div>
+          <Link to={ props.pathName }
+            className='detail-about-action'
+            onClick={props.displayForm('nameForm')}
             replace>Edit your name
           </Link>
         </div>

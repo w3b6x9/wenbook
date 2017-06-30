@@ -10,9 +10,11 @@ const ProfileAboutGender = props => {
       return (<GenderFormContainer />);
     } else {
       return (
-        <div>
-          { gender }
-          <Link to={ props.pathName } onClick={props.displayForm('genderForm')}
+        <div className='detail-about-list-item'>
+          <div>{ gender }</div>
+          <Link to={ props.pathName }
+            className='detail-about-action'
+            onClick={props.displayForm('genderForm')}
             replace>Edit your gender
           </Link>
         </div>

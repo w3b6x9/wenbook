@@ -10,9 +10,11 @@ const ProfileAboutBirthday = props => {
       return (<BirthdayFormContainer />);
     } else {
       return (
-        <div>
+        <div className='detail-about-list-item'>
           { birth_month + '/' + birth_day + '/' + birth_year }
-          <Link to={ props.pathName } onClick={props.displayForm('birthdayForm')}
+          <Link to={ props.pathName }
+            className='detail-about-action'
+            onClick={props.displayForm('birthdayForm')}
             replace>Edit your birthday
           </Link>
         </div>
