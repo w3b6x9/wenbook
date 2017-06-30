@@ -10,6 +10,10 @@ export default class ProfileAbout extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllFriends(this.props.userId);
+  }
+
   render() {
     const { first_name, last_name, email, gender, birth_year,
       birth_month, birth_day, id } = this.props.user;
