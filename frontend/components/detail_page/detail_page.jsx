@@ -24,14 +24,16 @@ export default class DetailPage extends React.Component {
 
     return (
       <div className='detail-body'>
-        <div className='detail-header-section'>
-          <ProfileContainer />
-        </div>
-        <div className='profile-navbar'>
-          <ProfileNavigationContainer />
-        </div>
-        <div>
-          { component }
+        <div className='detail-main-container'>
+          <div className='detail-header-section'>
+            <ProfileContainer />
+          </div>
+          <div className='profile-navbar'>
+            <ProfileNavigationContainer />
+          </div>
+          <div>
+            { component }
+          </div>
         </div>
       </div>
     );

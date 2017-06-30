@@ -4,6 +4,7 @@ import EditProfileButton from './edit_profile_button';
 import RequestRespondButton from './request_respond_button';
 import RequestSendButton from './request_send_button';
 import FriendButton from './friend_button';
+import ConfirmedFriendButton from './confirmed_friend_button';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -39,9 +40,11 @@ export default class Profile extends React.Component {
       currentUserId,
       receivedRequests,
       sentRequests,
+      friends,
     } = this.props;
     let receivedRequest = false;
     let sentRequest = false;
+    let friend = false;
 
     for (let i=0; i < receivedRequests.length; i++) {
       if (receivedRequests[i].id === userId) {
@@ -52,6 +55,12 @@ export default class Profile extends React.Component {
     for (let i=0; i < sentRequests.length; i++) {
       if (sentRequests[i].receiver_id === userId) {
         sentRequest = true;
+      }
+    }
+
+    for (let i=0; i < friends.length; i++) {
+      if (friends[i].id === currentUserId) {
+        friend = true;
       }
     }
 
@@ -67,10 +76,14 @@ export default class Profile extends React.Component {
       return (
         <RequestSendButton userId={userId} />
       );
+    } else if (friend) {
+      return (
+        <ConfirmedFriendButton />
+      );
     } else {
       return (
         <FriendButton receiverId={userId} createFriendship={this.props.createFriendship} />
-      )
+      );
     }
   }
 

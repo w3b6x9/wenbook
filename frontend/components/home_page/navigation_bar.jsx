@@ -24,7 +24,7 @@ export default class NavigationBar extends React.Component {
       <div className='signed-in-nav'>
         <div className='active-section'>
           <div className='nav-section-left'>
-            <Link exact to={'/'} replace>
+            <Link to='/' replace>
               <i className='fa fa-facebook-official icon-normal' aria-hidden="true" />
             </Link>
             <input className='nav-search'
@@ -72,7 +72,7 @@ export default class NavigationBar extends React.Component {
             <div className='menu-section'>
               <div>
                 <i className='fa fa-caret-down icon-small'
-                  onClick={this.onButtonClick}
+                  onClick={this.props.signOut}
                   aria-hidden="true" />
               </div>
               <div>
