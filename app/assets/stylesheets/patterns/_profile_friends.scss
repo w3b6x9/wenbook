@@ -37,11 +37,11 @@
 .pro-friend-pic {
   weight: 110px;
   width: 110px;
-  border: 1px solid $error;
 }
 
 .pro-friend-name {
   margin: 40px 0 0 10px;
+  text-decoration: none;
 }
 
 .pro-friends-btn {
@@ -59,8 +59,7 @@
 }
 
 .pro-friends-btn:hover {
-  background: #FF1744;
-  color: white;
+  background: #F6F6F6;
 }
 
 i.check-icon {
@@ -70,4 +69,15 @@ i.check-icon {
 
 .name-pic {
   display: flex;
+}
+
+.pro-friend-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #365899;
+}
+
+.pro-friends-title {
+  text-decoration: none;
+  color: #4b4f56;
 }

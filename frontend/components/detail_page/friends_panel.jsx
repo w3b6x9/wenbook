@@ -42,7 +42,7 @@ export default class FriendsPanel extends React.Component {
             aria-hidden='true'
           />
           <div className='panel-title'>
-            Friends . { this.props.friends.length }
+            Friends { this.props.friends.length }
           </div>
         </div>
         <ul className='friends-block'>

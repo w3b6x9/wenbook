@@ -6,12 +6,20 @@
 }
 
 .panel-profile-link {
+  display: flex;
   text-decoration: none;
   color: black;
   font-size: 14px;
   width: 175px;
   height: 20px;
   padding: 3px;
+  margin-bottom: 8px;
+}
+
+.panel-profile-link:hover {
+  border: 1px solid #dbdbdb;
+  background: #f6f6f6;
+  border-radius: 2px;
 }
 
 .panel-profile-pic {
@@ -37,4 +45,51 @@
 .news-feed-container {
   display: flex;
   flex-direction: column;
+}
+
+.home-panel-links {
+  display: flex;
+  flex-direction: column;
+}
+
+i.news-feed-icon {
+  font-size: 23px;
+  margin-right: 5px;
+}
+
+.panel-link-select {
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  background: #f6f6f6;
+  border-radius: 2px;
+}
+
+.birthday-section {
+  height: 50px;
+  width: 265px;
+  margin: 0 0 10px 10px;
+  background: white;
+}
+
+i.gift-icon {
+  color: #ea4d9b;
+  margin-right: 5px;
+}
+
+.bday-user-name {
+  font-size: 13px;
+  color: #365899;
+  font-weight: bold;
+}
+
+.birthday-layout {
+  display: flex;
+  padding: 15px 0 0 5px;
+}
+
+.bday-text {
+  font-size: 11px;
+  color: grey;
+  margin-top: 2px;
 }

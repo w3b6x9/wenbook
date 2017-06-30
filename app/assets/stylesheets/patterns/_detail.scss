@@ -34,10 +34,10 @@
   margin-top: 150px;
   margin-left: 210px;
   text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
 }
 
 .profile-pic {
@@ -166,7 +166,7 @@ i.user-icon {
   position: absolute;
   height: 20px;
   width: 103;
-  border: 1px solid black;
+  border: .5px solid black;
   text-decoration: none;
   top: 160px;
   right: 15px;

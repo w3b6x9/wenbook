@@ -38,7 +38,7 @@ export default class ProfileFriends extends React.Component {
           <div className='name-pic'>
             <img src={friend.profile_picture} className='pro-friend-pic' />
             <div className='pro-friend-name'>
-              <Link to={ '/profile/' + friend.id }
+              <Link to={ '/profile/' + friend.id } className='pro-friend-link'
                 onClick={ () => window.scrollTo(0, 0) }
               >
                 { friend.first_name + ' ' + friend.last_name }
@@ -58,7 +58,8 @@ export default class ProfileFriends extends React.Component {
       <div className='pro-friends-section'>
         <div className='pro-friends-header'>
           <i className="fa fa-users user-icon" aria-hidden="true" />
-          <Link to={ pathname } replace>Friends</Link>
+          <Link to={ pathname } className='pro-friends-title'
+            replace>Friends</Link>
         </div>
         <ul className='pro-friends-body'>
           { friends }
