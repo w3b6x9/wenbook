@@ -4,7 +4,7 @@ import {
   RECEIVE_ALL_FRIENDS,
 } from '../actions/user_actions';
 import {
-  RECEIVE_WALL_POST,
+  RECEIVE_POST,
   RECEIVE_WALL_POSTS,
 } from '../actions/post_actions';
 import { RECEIVE_SINGLE_COMMENT } from '../actions/comment_actions';
@@ -23,7 +23,7 @@ const UserReducer = (state = defaultState, action) => {
       const friendDupState = merge({}, state);
       friendDupState.friends = action.friends;
       return friendDupState;
-    case RECEIVE_WALL_POST:
+    case RECEIVE_POST:
       return merge(
         {},
         state,

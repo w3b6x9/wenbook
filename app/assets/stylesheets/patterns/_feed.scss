@@ -113,6 +113,7 @@ input.submit-btn {
 .feed-user-name {
   text-decoration: none;
   font-weight: bold;
+  color: #365899;
 }
 
 .feed-time-ago {
@@ -120,8 +121,9 @@ input.submit-btn {
 }
 
 .feed-body {
-  margin: 0 10px;
+  margin: 0 15px 10px 10px;
   min-height: 25px;
+  font-size: 25px;
 }
 
 .comment-section {
@@ -147,10 +149,13 @@ input.submit-btn {
 .comment-name-link {
   text-decoration: none;
   margin: 11px 4px 0 0;
+  color: #365899;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .comment-body {
-  margin: 11px 0 0 0;
+  margin: 11px 5px 0 0;
 }
 
 .comment-form-container {
