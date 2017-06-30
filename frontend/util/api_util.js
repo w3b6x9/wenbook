@@ -24,7 +24,6 @@ export const updateSingleUserImage = (userId, imageData) => {
 };
 
 export const createFriendship = friendship => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/friendships/sent_requests',

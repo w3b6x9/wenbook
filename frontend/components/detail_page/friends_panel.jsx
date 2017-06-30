@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class FriendsPanel extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class FriendsPanel extends React.Component {
     const nineFriends = this.props.friends.slice(0, 9);
     const friendsItems = nineFriends.map(friend => {
       const {
+        id,
         profile_picture,
         first_name,
         last_name,
@@ -26,7 +28,9 @@ export default class FriendsPanel extends React.Component {
 
       return (
         <li className='friend-square' key={friend.friendship_id}>
-          <img src={friend.profile_picture} className='friend-picture' />
+          <Link to={ '/profile/' + id }>
+            <img src={friend.profile_picture} className='friend-picture' />
+          </Link>
           <div className='friend-name'>
             <div>{ first_name }</div>
             <div>{ last_name }</div>

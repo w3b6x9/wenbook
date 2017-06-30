@@ -282,6 +282,11 @@ i.friends {
   margin: 56px 0 0 6px;
   font-size: 12px;
   color: black;
+  text-shadow:
+    -.2px -.2px 0 #fff,
+    .2px -.2px 0 #fff,
+    -.2px .2px 0 #fff,
+    .2px .2px 0 #fff;
 }
 
 .friend-square {
