@@ -91,6 +91,7 @@
 
 div > a.profile-navbar-tab:last-child {
   border-right: 1px solid #e9eaed;
+  padding-top: 16px;
 }
 
 .about-section {
@@ -122,7 +123,7 @@ ul.about-main {
   flex-basis: 72%;
   background: white;
   min-height: 400px;
-  padding: 20px 24px;
+  padding: 20px 0;
 }
 
 li.about-item {
@@ -316,4 +317,64 @@ i.friends {
 .side-tab-selected {
   color: black;
   border-left: 4px solid #365899;
+}
+
+.detail-name-form {
+  background: #f6f7f9;
+  height: 150px;
+  width: 650px;
+}
+
+.detail-name-input {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 20px 100px;
+}
+
+.detail-input-box {
+  height: 27px;
+  width: 250px;
+  border: 1px solid #bdc7d8;
+  font-size: 13px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.cancel-btn {
+  justify-content: flex-end;
+  color: #90949c;
+  font-size: 14px;
+  margin: -10px 0 0 145px;
+}
+
+.form-top-row {
+  display: flex;
+}
+
+.detail-name-title {
+  font-size: 15px;
+  color: #666;
+  margin: 5px 10px 0 0;
+}
+
+.detail-field-row {
+  display: flex;
+}
+
+.detail-submit {
+  width: 100px;
+  font-size: 12px;
+  height: 25px;
+  border-radius: 3px;
+  padding: 0 8px;
+  margin-left: 150px;
+  margin-top: 5px;
+}
+
+i.cancel-icon {
+  margin-right: 3px;
+}
+
+.cancel-btn {
+  cursor: pointer;
 }
