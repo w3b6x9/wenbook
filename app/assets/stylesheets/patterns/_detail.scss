@@ -13,7 +13,7 @@
 
 .profile-navbar {
   background-color: white;
-  height: 55px;
+  height: 50px;
   width: 851px;
   margin: 0 auto;
 }
@@ -72,8 +72,25 @@
 }
 
 .profile-navbar-tab {
-  margin-top: 14px;
-  margin-right: 20px;
+  width: auto;
+  height: 35px;
+  border-left: 1px solid #e9eaed;
+  padding: 15px 18px 0 18px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #365899;
+}
+
+.profile-navbar-tab:hover {
+  background: #f6f7f9;
+}
+
+.tab-selected {
+  color: #4b4f56;
+}
+
+div > a.profile-navbar-tab:last-child {
+  border-right: 1px solid #e9eaed;
 }
 
 .about-section {
@@ -89,11 +106,13 @@
 }
 
 .about-tab {
+  display: flex;
+  flex-direction: column;
   flex-basis: 28%;
   background: white;
   min-height: 400px;
   border-right: 1px solid $btn-border-grey;
-  padding: 12px 4px 12px 16px;
+  padding: 18px 4px 12px 0;
 }
 
 ul.about-main {
@@ -129,7 +148,7 @@ li.about-item:last-child {
 }
 
 i.user-icon {
-  color: grey;
+  color: #bdbdbd;
   margin-right: 10px;
   font-size: 25px;
 }
@@ -144,7 +163,7 @@ i.user-icon {
 
 .profile-action-btn {
   position: absolute;
-  height: 24px;
+  height: 20px;
   width: 103;
   border: 1px solid black;
   text-decoration: none;
@@ -154,7 +173,7 @@ i.user-icon {
   font-size: 13px;
   font-weight: bold;
   color: #4b4f56;
-  padding: 5px 7px 0 5px;
+  padding: 4px 7px 0 5px;
   border-radius: 3px;
 }
 
@@ -267,4 +286,34 @@ i.friends {
 .friend-square {
   display: flex;
   margin: 0 0 7px 7px;
+}
+
+.nav-friends-count {
+  display: flex;
+}
+
+.friends-count {
+  font-size: 11px;
+  color: #89919c;
+  padding-left: 6px;
+  padding-top: 4px;
+}
+
+.about-title {
+  text-decoration: none;
+  color: #4b4f56;
+}
+
+.tab-title {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #90949c;
+  margin-bottom: 27px;
+  padding: 2.5px 0 2.5px 14px;
+}
+
+.side-tab-selected {
+  color: black;
+  border-left: 4px solid #365899;
 }

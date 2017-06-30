@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ProfileAboutName from './profile_about_name';
 import ProfileAboutEmail from './profile_about_email';
 import ProfileAboutGender from './profile_about_gender';
@@ -19,11 +19,31 @@ export default class ProfileAbout extends React.Component {
       <div className='about-section'>
         <div className='about-header'>
           <i className="fa fa-user user-icon" aria-hidden="true" />
-          <Link to={pathname} replace>About</Link>
+          <Link to={pathname} className='about-title' replace>About</Link>
         </div>
         <div className='about-subsection'>
           <div className='about-tab'>
-            <Link to={pathname} replace>Overview</Link>
+            <NavLink exact to={pathname} className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Overview</NavLink>
+            <NavLink exact to='/test' className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Work and Education</NavLink>
+            <NavLink exact to='/test' className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Places You've Lived</NavLink>
+            <NavLink exact to='/test' className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Contact and Basic Info</NavLink>
+            <NavLink exact to='/test' className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Family and Relationships</NavLink>
+            <NavLink exact to='/test' className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Details About You</NavLink>
+            <NavLink exact to='/test' className='tab-title'
+              activeClassName='side-tab-selected'
+              replace>Life Events</NavLink>
           </div>
           <ul className='about-main'>
             <li className='about-item'>
