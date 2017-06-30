@@ -8,7 +8,7 @@ const FriendButton = ({receiverId, createFriendship}) => {
   };
 
   return (
-    <Link to={ '/profile/' + receiverId + '/about' }
+    <Link to={ '/profile/' + receiverId }
       onClick={createFriendship(friendship)}
       className='profile-action-btn'
       replace
