@@ -85,14 +85,12 @@ export default class Profile extends React.Component {
             height='204px'
             width='851px'
           />
-          <input type='file' onChange={this.handleFileSubmit('cover_picture')} />
           { this.buttonAction() }
         </div>
         <div className='profile-pic'>
           <img src={user.profile_picture}
             className='profile-pic-inner'
           />
-        <input type='file' onChange={this.handleFileSubmit('profile_picture')} />
         </div>
         <div className='cover-full-name'>
           {fullName}
