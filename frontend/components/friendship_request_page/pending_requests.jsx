@@ -21,7 +21,7 @@ export default class PendingRequests extends React.Component {
       return (
         <li key={request.friendship_id} className='request-item'>
           <div className='info-left'>
-            <img src={request.profile_picture} />
+            <img src={request.profile_picture} className='request-profile-pic' />
             <div className='user-name'>
               { request.first_name + ' ' + request.last_name }
             </div>
