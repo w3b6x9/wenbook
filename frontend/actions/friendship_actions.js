@@ -40,3 +40,8 @@ export const fetchSentRequests = () => dispatch => {
   return APIUtil.fetchSentRequests()
     .then(requests => dispatch(receiveSentRequests(requests)));
 };
+
+export const createFriendship = friendship => dispatch => {
+  return APIUtil.createFriendship(friendship)
+    .then(request => dispatch(receiveSentRequests(request)));
+};

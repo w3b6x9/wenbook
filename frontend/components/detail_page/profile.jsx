@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import EditProfileButton from './edit_profile_button';
 import RequestRespondButton from './request_respond_button';
 import RequestSendButton from './request_send_button';
+import FriendButton from './friend_button';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -66,6 +67,10 @@ export default class Profile extends React.Component {
       return (
         <RequestSendButton userId={userId} />
       );
+    } else {
+      return (
+        <FriendButton receiverId={userId} createFriendship={this.props.createFriendship} />
+      )
     }
   }
 

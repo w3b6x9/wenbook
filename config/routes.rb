@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     get "friendships/sent_requests", to: "friendships#sent_requests", as: :sent_requests
     get "users/:id/wallfeed", to: "posts#wallfeed", as: :wallfeed
     get "users/:id/newsfeed", to: "posts#newsfeed", as: :newsfeed
+    post "friendships/sent_requests", to: "friendships#create_friendship"
   end
 end

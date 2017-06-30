@@ -36,9 +36,20 @@ class Api::FriendshipsController < ApplicationController
     @sent_requests = current_user.pending_sent_friendships
   end
 
+  def create_friendship
+    @friendship = Friendship.new(friendship_params)
+    @friendship.sender = current_user
+
+    if @friendship.save
+      render :sent_request
+    else
+      render json: @friendship.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def friendship_params
-    params.require(:friendship).permit(:status)
+    params.require(:friendship).permit(:status, :receiver_id)
   end
 end

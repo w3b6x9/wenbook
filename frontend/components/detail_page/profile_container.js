@@ -7,6 +7,7 @@ import {
 import {
   fetchSentRequests,
   requestPendingRequests,
+  createFriendship,
 } from '../../actions/friendship_actions';
 import Profile from './profile';
 import { valuesArray } from '../../reducers/selectors';
@@ -31,6 +32,7 @@ const mapDispatchToProps = dispatch => {
       updateSingleUserImage(userId, imageData)),
     fetchSentRequests: () => dispatch(fetchSentRequests()),
     requestPendingRequests: () => dispatch(requestPendingRequests()),
+    createFriendship: friendship => () => dispatch(createFriendship(friendship)),
   };
 };
 
