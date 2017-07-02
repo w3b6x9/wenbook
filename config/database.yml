@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: Proposal_development
+  database: WenBook_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: Proposal
+  #username: WenBook
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Proposal_test
+  database: WenBook_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: Proposal_production
-  username: Proposal
-  password: <%= ENV['PROPOSAL_DATABASE_PASSWORD'] %>
+  database: WenBook_production
+  username: WenBook
+  password: <%= ENV['WenBook_DATABASE_PASSWORD'] %>
