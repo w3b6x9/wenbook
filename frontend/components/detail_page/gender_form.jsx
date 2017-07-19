@@ -15,15 +15,16 @@ export default class GenderForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateSingleUser(this.state);
+    this.props.closeForm('genderForm')();
   }
 
   render() {
     const { gender } = this.state;
 
     return (
-      <form onSubmit={ this.handleSubmit }>
+      <form onSubmit={ this.handleSubmit } className='detail-name-form'>
         <div className='radio-section'>
-          <div>
+          <div className='gender-row'>
             <label className='radio-gender'>
               <input type='radio'
                 value='Female'
@@ -33,8 +34,7 @@ export default class GenderForm extends React.Component {
               />
             <div className='radio-text'>Female</div>
             </label>
-          </div>
-          <div>
+
             <label className='radio-gender'>
               <input type='radio'
                 value='Male'
@@ -45,10 +45,13 @@ export default class GenderForm extends React.Component {
               <div className='radio-text'>Male</div>
             </label>
           </div>
+          <div className='cancel-btn gender-cancel' onClick={this.props.closeForm('genderForm')}>
+             <i className="fa fa-times cancel-icon" aria-hidden="true" />
+             Cancel
+          </div>
         </div>
-        <div>
-          <input type='submit' value='Save changes' />
-        </div>
+        <input className='confirm-btn detail-submit gender-submit'
+          type='submit' value='Save changes' />
       </form>
     );
   }
