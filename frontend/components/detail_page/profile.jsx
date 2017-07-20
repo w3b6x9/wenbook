@@ -80,6 +80,11 @@ export default class Profile extends React.Component {
       return (
         <ConfirmedFriendButton />
       );
+    } else {
+      return (
+        <FriendButton receiverId={userId}
+          createFriendship={this.props.createFriendship} />
+      );
     }
   }
 
