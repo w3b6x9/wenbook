@@ -81,26 +81,29 @@ export default class BirthdayForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={ this.handleSubmit }>
-        <div className='sign-up-tag margin-top'>
-          <label>
-            Birthday
-              <div className='birthday-dropdown'>
-                <div>
-                  { this.selectMonth() }
-                </div>
-                <div>
-                  { this.selectDay() }
-                </div>
-                <div>
-                  { this.selectYear() }
-                </div>
+      <form onSubmit={ this.handleSubmit } className='detail-name-form'>
+        <div className='sign-up-tag margin-top about-birthday'>
+          <label className='birthday-row'>
+            <div className='detail-name-title birthday-title'>Birthday</div>
+            <div className='birthday-dropdown'>
+              <div>
+                { this.selectMonth() }
               </div>
+              <div>
+                { this.selectDay() }
+              </div>
+              <div>
+                { this.selectYear() }
+              </div>
+            </div>
           </label>
+          <div className='cancel-btn birthday-cancel' onClick={this.props.closeForm('birthdayForm')}>
+             <i className="fa fa-times cancel-icon" aria-hidden="true" />
+             Cancel
+          </div>
         </div>
-        <div>
-          <input type='submit' value='Save changes' />
-        </div>
+        <input className='confirm-btn detail-submit birthday-submit'
+          type='submit' value='Save changes' />
       </form>
     );
   }
