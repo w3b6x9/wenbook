@@ -27,26 +27,19 @@ export default class ProfileAbout extends React.Component {
         </div>
         <div className='about-subsection'>
           <div className='about-tab'>
-            <NavLink exact to={pathname} className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title side-tab-selected'
               replace>Overview</NavLink>
-            <NavLink exact to='/test' className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title'
               replace>Work and Education</NavLink>
-            <NavLink exact to='/test' className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title'
               replace>Places You've Lived</NavLink>
-            <NavLink exact to='/test' className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title'
               replace>Contact and Basic Info</NavLink>
-            <NavLink exact to='/test' className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title'
               replace>Family and Relationships</NavLink>
-            <NavLink exact to='/test' className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title'
               replace>Details About You</NavLink>
-            <NavLink exact to='/test' className='tab-title'
-              activeClassName='side-tab-selected'
+            <NavLink exact to={pathname} className='tab-title'
               replace>Life Events</NavLink>
           </div>
           <ul className='about-main'>
