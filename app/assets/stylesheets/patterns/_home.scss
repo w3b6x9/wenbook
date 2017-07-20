@@ -1,6 +1,5 @@
 .home-body {
   display: flex;
-  // justify-content: space-around;
   min-height: 1000px;
   background: $background-grey;
 }
@@ -104,4 +103,44 @@ i.gift-icon {
   font-size: 11px;
   color: grey;
   margin-top: 2px;
+}
+
+.adv-section {
+  height: 490px;
+  width: 265px;
+  margin: 15px 0 10px 10px;
+  background: white;
+}
+
+.img-ad {
+  height: 155px;
+  width: 250px;
+  object-fit: contain;
+  margin: 0 0 0 7px;
+}
+
+.create-ad {
+  text-align: right;
+  padding: 5px 7px 0 0;
+  font-size: 13px;
+  color: #365899;
+}
+
+.title-adv {
+  font-size: 14px;
+  font-weight: bold;
+  color: #365899;
+}
+
+.desc-adv {
+  font-size: 13px;
+  color: #90949c;
+}
+
+.body-adv {
+  padding: 0 5px 5px 5px;
+}
+
+.adv-link {
+  text-decoration: none;
 }

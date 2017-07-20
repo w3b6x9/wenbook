@@ -8,6 +8,7 @@ import LinkedInButton from './linked_in_button';
 import BirthdaySection from './birthday_section';
 import PortfolioButton from './portfolio_button';
 import AngelListButton from './angel_list_button';
+import AdsSection from './ads_section';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export default class HomePage extends React.Component {
           </div>
           <div>
             <BirthdaySection />
+            <AdsSection />
           </div>
         </div>
       </div>
