@@ -124,7 +124,7 @@ ul.about-main {
   flex-basis: 72%;
   background: white;
   min-height: 400px;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 li.about-item {
@@ -411,5 +411,9 @@ textarea.post-input {
 }
 
 .gender-cancel {
-  margin: 20px 0 0 170px;
+  margin: 20px 0 0 200px;
+}
+
+.email-cancel {
+  margin-left: 176px;
 }

@@ -32,7 +32,7 @@ export default class EmailForm extends React.Component {
                 value={ this.state.email }
               />
             </label>
-            <div className='cancel-btn' onClick={this.props.closeForm('emailForm')}>
+            <div className='cancel-btn email-cancel' onClick={this.props.closeForm('emailForm')}>
               <i className="fa fa-times cancel-icon" aria-hidden="true" />
               Cancel
             </div>
