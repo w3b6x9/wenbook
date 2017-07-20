@@ -1,19 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const LinkedInButton = () => {
+const PortfolioButton = () => {
   return (
-    <a href={ 'https://www.linkedin.com/in/wenboxie' }
+    <a href={ 'http://www.wenboxie.com' }
       target='_blank'
       className='panel-profile-link'>
-      <i className="fa fa-linkedin-square linkedin-icon" aria-hidden="true" />
+      <i className="fa fa-globe linkedin-icon" aria-hidden="true" />
       <div className='panel-profile-btn'>
         <div className='panel-profile-name'>
-          LinkedIn
+          Website
         </div>
       </div>
     </a>
   );
 };
 
-export default LinkedInButton;
+export default PortfolioButton;

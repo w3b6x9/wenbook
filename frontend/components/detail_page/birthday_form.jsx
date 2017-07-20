@@ -15,6 +15,7 @@ export default class BirthdayForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateSingleUser(this.state);
+    this.props.closeForm('birthdayForm')();
   }
 
   selectMonth() {

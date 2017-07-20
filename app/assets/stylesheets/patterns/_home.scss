@@ -11,9 +11,9 @@
   color: black;
   font-size: 14px;
   width: 175px;
-  height: 20px;
+  height: 30px;
   padding: 3px;
-  margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
 .panel-profile-link:hover {
@@ -54,8 +54,18 @@
 }
 
 i.news-feed-icon {
+  font-size: 19px;
+  margin: 3px 3px 0 0;
+}
+
+i.github-icon {
   font-size: 23px;
-  margin-right: 5px;
+  margin-right: 3px;
+}
+
+i.linkedin-icon {
+  font-size: 22px;
+  margin-right: 3px;
 }
 
 .panel-link-select {
@@ -67,7 +77,7 @@ i.news-feed-icon {
 }
 
 .birthday-section {
-  height: 50px;
+  height: 40px;
   width: 265px;
   margin: 0 0 10px 10px;
   background: white;
@@ -75,18 +85,19 @@ i.news-feed-icon {
 
 i.gift-icon {
   color: #ea4d9b;
-  margin-right: 5px;
+  margin: 1px 5px 0 5px;
 }
 
 .bday-user-name {
   font-size: 13px;
   color: #365899;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .birthday-layout {
   display: flex;
-  padding: 15px 0 0 5px;
+  padding: 12px 0 0 5px;
 }
 
 .bday-text {

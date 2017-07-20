@@ -6,6 +6,8 @@ import NewsFeedButton from './news_feed_button';
 import GitHubButton from './github_button';
 import LinkedInButton from './linked_in_button';
 import BirthdaySection from './birthday_section';
+import PortfolioButton from './portfolio_button';
+import AngelListButton from './angel_list_button';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -19,8 +21,10 @@ export default class HomePage extends React.Component {
           <div className='home-panel-links'>
             <ProfileButton currentUser={ this.props.currentUser } />
             <NewsFeedButton />
+            <PortfolioButton />
             <GitHubButton />
             <LinkedInButton />
+            <AngelListButton />
           </div>
           <div className='news-feed-container'>
             <FeedPostFormContainer />
