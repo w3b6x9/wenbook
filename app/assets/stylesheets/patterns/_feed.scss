@@ -169,12 +169,14 @@ input.submit-btn {
 }
 
 ::-webkit-input-placeholder {
-  font-size: 14px;
-  padding: 5px 0 0 2px;
+  font-size: 15px;
+  padding: 0 0 0 2px;
 }
 
 .comment-input {
   border: 1px solid $background-grey;
-  height: 29px;
+  height: 24px;
   width: 445px;
+  padding: 7px 0 0 3px;
+  font-size: 15px;
 }
