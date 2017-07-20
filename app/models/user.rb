@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   has_many :confirmed_received_friendships,
     -> { where(status: :confirmed) },
-    class_name: "Friendship",
+    class_name: :Friendship,
     foreign_key: :receiver_id
 
   has_many :pending_received_friendships,
