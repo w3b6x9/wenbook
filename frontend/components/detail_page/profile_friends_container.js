@@ -5,12 +5,13 @@ import { updatePendingRequest } from '../../actions/friendship_actions';
 import ProfileFriends from './profile_friends';
 import { valuesArray } from '../../reducers/selectors';
 
-const mapStateToProps = ({user}, {match}) => {
+const mapStateToProps = ({user, session}, {match}) => {
   const userId = parseInt(match.params.userId);
 
   return {
     friends: valuesArray(user.friends),
     userId,
+    currentUser: session.currentUser,
   };
 };
 

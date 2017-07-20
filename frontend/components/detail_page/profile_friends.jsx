@@ -19,15 +19,17 @@ export default class ProfileFriends extends React.Component {
   }
 
   handleClick(friendshipId) {
-    const friendship = {
-      status: 'deleted',
-      friendship_id: friendshipId,
-    };
+    if (this.props.currentUser.id === this.props.userId) {
+      const friendship = {
+        status: 'deleted',
+        friendship_id: friendshipId,
+      };
 
-    return () => {
-      this.props.updatePendingRequest(friendship)
+      return () => {
+        this.props.updatePendingRequest(friendship)
         .then(() => this.props.fetchAllFriends(this.props.userId));
-    };
+      };
+    }
   }
 
   render() {
