@@ -7,14 +7,14 @@ const AdsSection = () => {
       <div className='create-ad'>
         Create Ad
       </div>
-      <a href='https://www.wenbook.co' target='_blank' className='adv-link'>
+      <a href='https://wenbo.herokuapp.com' target='_blank' className='adv-link'>
         <div>
           <img src='https://s3.us-east-2.amazonaws.com/wenbook-dev/misc/wenbook-home.png'
             className='img-ad'
             />
           <div className='body-adv'>
             <div className='title-adv'>wenbook</div>
-            <div className='title-adv'>wenbook.co</div>
+            <div className='title-adv'>wenbo.herokuapp.com</div>
             <div className='desc-adv'>Check out one of the best social networking apps ever made...</div>
           </div>
         </div>
