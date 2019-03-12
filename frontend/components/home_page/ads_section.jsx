@@ -19,14 +19,14 @@ const AdsSection = () => {
           </div>
         </div>
       </a>
-      <a href='http://www.prok.fun' target='_blank' className='adv-link'>
+      <a href='https://w3b6x9.github.io/prok' target='_blank' className='adv-link'>
         <div>
           <img src='https://s3.us-east-2.amazonaws.com/wenbook-dev/misc/prok-game.png'
             className='img-ad'
             />
           <div className='body-adv'>
             <div className='title-adv'>prok</div>
-            <div className='title-adv'>prok.fun</div>
+            <div className='title-adv'>w3b6x9.github.io/prok</div>
             <div className='desc-adv'>Defeat your boredom with an interactive shooter game...</div>
           </div>
         </div>
